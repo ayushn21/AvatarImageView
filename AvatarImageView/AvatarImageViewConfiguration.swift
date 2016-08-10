@@ -9,9 +9,8 @@
 import UIKit
 
 public protocol AvatarImageViewDataSource {
-    var name: String { get }
-    
     // Optional
+    var name: String { get }
     var avatar: UIImage? { get }
     var bgColor: UIColor? { get }
     var initials: String { get }
@@ -26,6 +25,11 @@ public protocol AvatarImageViewConfiguration {
 }
 
 public extension AvatarImageViewDataSource {
+    var name: String {
+        get {
+            return "?"
+        }
+    }
     
     var avatar: UIImage? {
         get {
