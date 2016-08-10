@@ -53,6 +53,7 @@ public class AvatarImageView: UIImageView {
         else {
             image = drawImageWith(data: data)
         }
+        setNeedsDisplay()
     }
     
     func textAttributes(fromData data: AvatarImageViewDataSource) -> [String : AnyObject] {
@@ -99,8 +100,9 @@ public class AvatarImageView: UIImageView {
         
         return image
     }
+
+    // MARK:- Utilities
     
-    // MARK: Utilities
     private func randomColor() -> CGColor {
         srand48(Int(arc4random()))
         
@@ -110,5 +112,4 @@ public class AvatarImageView: UIImageView {
         
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
     }
-
 }
