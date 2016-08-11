@@ -76,10 +76,16 @@ public class AvatarImageView: UIImageView {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, scale)
         let context = UIGraphicsGetCurrentContext()
         
-        if configuration.shape == .Circle {
+        switch configuration.shape {
+        case .Circle:
             let circlePath = CGPathCreateWithEllipseInRect(self.bounds, nil)
             CGContextAddPath(context, circlePath)
             CGContextClip(context)
+            break
+        case .Mask(let image):
+            maskLayer(layer, withImage: image)
+        default:
+            break
         }
         
         var bgColor: CGColor! = nil
@@ -121,7 +127,15 @@ public class AvatarImageView: UIImageView {
         
         if let avatar = dataSource.avatar {
             image = avatar
-            if configuration.shape == .Circle { layer.cornerRadius = bounds.size.width/2 }
+            switch configuration.shape {
+            case .Circle:
+                layer.cornerRadius = bounds.size.width/2
+                break
+            case .Mask(let image):
+                maskLayer(layer, withImage: image)
+            default:
+                break
+            }
         }
         else {
             image = drawImageWith(data: dataSource)
@@ -140,5 +154,13 @@ public class AvatarImageView: UIImageView {
         let blue = CGFloat(drand48())
         
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
+    }
+    
+    private func maskLayer(layer: CALayer, withImage image: UIImage) {
+        let mask = CALayer()
+        mask.contents = image.CGImage
+        mask.frame = bounds
+        layer.mask = mask
+        layer.masksToBounds = true
     }
 }

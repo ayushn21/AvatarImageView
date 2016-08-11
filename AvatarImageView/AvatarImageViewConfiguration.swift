@@ -17,6 +17,9 @@ public enum Shape: Equatable {
     case Circle
     /// This will leave the view's corner radius untouched and will not perform any clipped.
     case Square
+    
+    /// Specify a custom shape using a mask image. Please ensure this image is of equal height and width.
+    case Mask(image: UIImage)
 }
 
 /// Implementation of the Equatable protocol to match `Shape`s
@@ -26,6 +29,8 @@ public func ==(lhs: Shape, rhs: Shape) -> Bool {
         return true
     case (.Square, .Square):
         return true
+    case (.Mask(let imageLhs), .Mask(let imageRhs)):
+        return UIImagePNGRepresentation(imageLhs) == UIImagePNGRepresentation(imageRhs)
     default:
         return false
     }
