@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		294E36D81D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36D71D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift */; };
+		294E36DD1D5CBEFF002230DF /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36DC1D5CBEFF002230DF /* TestData.swift */; };
 		2A0C2B331D5BAA98008027CA /* AvatarImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A0C2B321D5BAA98008027CA /* AvatarImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A0C2B3A1D5BAA98008027CA /* AvatarImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0C2B2F1D5BAA98008027CA /* AvatarImageView.framework */; };
 		2A0C2B3F1D5BAA98008027CA /* AvatarImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2B3E1D5BAA98008027CA /* AvatarImageViewTests.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		294E36D71D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageViewConfigurationTests.swift; sourceTree = "<group>"; };
+		294E36DC1D5CBEFF002230DF /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		2A0C2B2F1D5BAA98008027CA /* AvatarImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AvatarImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0C2B321D5BAA98008027CA /* AvatarImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarImageView.h; sourceTree = "<group>"; };
 		2A0C2B341D5BAA98008027CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +58,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		294E36D91D5CBEDB002230DF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2A0C2B3E1D5BAA98008027CA /* AvatarImageViewTests.swift */,
+				294E36D71D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		294E36DA1D5CBEE0002230DF /* Test Objects */ = {
+			isa = PBXGroup;
+			children = (
+				294E36DC1D5CBEFF002230DF /* TestData.swift */,
+			);
+			name = "Test Objects";
+			sourceTree = "<group>";
+		};
+		294E36DB1D5CBEE9002230DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A0C2B401D5BAA98008027CA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		2A0C2B251D5BAA98008027CA = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +115,9 @@
 		2A0C2B3D1D5BAA98008027CA /* AvatarImageViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				2A0C2B3E1D5BAA98008027CA /* AvatarImageViewTests.swift */,
-				2A0C2B401D5BAA98008027CA /* Info.plist */,
+				294E36DA1D5CBEE0002230DF /* Test Objects */,
+				294E36D91D5CBEDB002230DF /* Tests */,
+				294E36DB1D5CBEE9002230DF /* Supporting Files */,
 			);
 			path = AvatarImageViewTests;
 			sourceTree = "<group>";
@@ -209,6 +239,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294E36DD1D5CBEFF002230DF /* TestData.swift in Sources */,
+				294E36D81D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift in Sources */,
 				2A0C2B3F1D5BAA98008027CA /* AvatarImageViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +421,7 @@
 				2A0C2B451D5BAA98008027CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A0C2B461D5BAA98008027CA /* Build configuration list for PBXNativeTarget "AvatarImageViewTests" */ = {
 			isa = XCConfigurationList;
@@ -397,6 +430,7 @@
 				2A0C2B481D5BAA98008027CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

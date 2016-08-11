@@ -93,7 +93,7 @@ public extension AvatarImageViewDataSource {
     }
     
     /**
-     The first letter of the first 2 words of the `name` field is capitalised and returned. Eg. `John Appleseed` will return `JA`.<br />
+     The first letter of the first and last words of the `name` field is capitalised and returned. Eg. `John Appleseed` will return `JA`.<br />
      If the length of the String returned by `name` is not greater than 0, it will return ``
      */
     var initials: String {
@@ -104,17 +104,17 @@ public extension AvatarImageViewDataSource {
             
             var nameArray = name.componentsSeparatedByString(" ")
             
-            if nameArray.count > 2 {
-                nameArray = Array(nameArray.prefix(2))
+            if let firstName = nameArray.first,
+                let lastName = nameArray.last
+                where nameArray.count > 2 {
+                nameArray = [firstName, lastName]
             }
             
             var initials = ""
             nameArray.forEach { element in
-                guard let firstLetter = element.characters.first else {
-                    return
+                if let firstLetter = element.characters.first {
+                    initials.append(firstLetter)
                 }
-                
-                initials.append(firstLetter)
             }
             
             return initials.uppercaseString
