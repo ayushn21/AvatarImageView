@@ -83,7 +83,7 @@ public class AvatarImageView: UIImageView {
             CGContextClip(context)
             break
         case .Mask(let image):
-            maskLayer(layer, withImage: image)
+            mask(layer layer, withImage: image)
         default:
             break
         }
@@ -132,7 +132,7 @@ public class AvatarImageView: UIImageView {
                 layer.cornerRadius = bounds.size.width/2
                 break
             case .Mask(let image):
-                maskLayer(layer, withImage: image)
+                mask(layer: layer, withImage: image)
             default:
                 break
             }
@@ -156,7 +156,7 @@ public class AvatarImageView: UIImageView {
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
     }
     
-    private func maskLayer(layer: CALayer, withImage image: UIImage) {
+    private func mask(layer layer: CALayer, withImage image: UIImage) {
         let mask = CALayer()
         mask.contents = image.CGImage
         mask.frame = bounds
