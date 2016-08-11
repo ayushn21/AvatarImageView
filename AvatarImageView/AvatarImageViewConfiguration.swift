@@ -9,7 +9,7 @@
 import UIKit
 
 /// Used to specify the shape of the image of the user's profile picture.
-public enum Shape: Equatable {
+public enum Shape {
     /** 
      This will set the corner radius to half the width if the view is supplied with an image. <br />
      If no image is supplied and the view draws initials, the resulting image will be clipped to a circle using a `CGPath`.
@@ -20,20 +20,6 @@ public enum Shape: Equatable {
     
     /// Specify a custom shape using a mask image. Please ensure this image is of equal height and width.
     case Mask(image: UIImage)
-}
-
-/// Implementation of the Equatable protocol to match `Shape`s
-public func ==(lhs: Shape, rhs: Shape) -> Bool {
-    switch (lhs, rhs) {
-    case (.Circle, .Circle):
-        return true
-    case (.Square, .Square):
-        return true
-    case (.Mask(let imageLhs), .Mask(let imageRhs)):
-        return UIImagePNGRepresentation(imageLhs) == UIImagePNGRepresentation(imageRhs)
-    default:
-        return false
-    }
 }
 
 /**
