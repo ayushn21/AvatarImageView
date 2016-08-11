@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		294E36D81D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36D71D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift */; };
 		294E36DD1D5CBEFF002230DF /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36DC1D5CBEFF002230DF /* TestData.swift */; };
+		294E36E01D5CC7E8002230DF /* SaveImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36DF1D5CC7E8002230DF /* SaveImageUtility.swift */; };
 		2A0C2B331D5BAA98008027CA /* AvatarImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A0C2B321D5BAA98008027CA /* AvatarImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A0C2B3A1D5BAA98008027CA /* AvatarImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0C2B2F1D5BAA98008027CA /* AvatarImageView.framework */; };
 		2A0C2B3F1D5BAA98008027CA /* AvatarImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2B3E1D5BAA98008027CA /* AvatarImageViewTests.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		294E36D71D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageViewConfigurationTests.swift; sourceTree = "<group>"; };
 		294E36DC1D5CBEFF002230DF /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		294E36DF1D5CC7E8002230DF /* SaveImageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveImageUtility.swift; sourceTree = "<group>"; };
 		2A0C2B2F1D5BAA98008027CA /* AvatarImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AvatarImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0C2B321D5BAA98008027CA /* AvatarImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarImageView.h; sourceTree = "<group>"; };
 		2A0C2B341D5BAA98008027CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		294E36DE1D5CC7CB002230DF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				294E36DF1D5CC7E8002230DF /* SaveImageUtility.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		2A0C2B251D5BAA98008027CA = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		2A0C2B3D1D5BAA98008027CA /* AvatarImageViewTests */ = {
 			isa = PBXGroup;
 			children = (
+				294E36DE1D5CC7CB002230DF /* Utilities */,
 				294E36DA1D5CBEE0002230DF /* Test Objects */,
 				294E36D91D5CBEDB002230DF /* Tests */,
 				294E36DB1D5CBEE9002230DF /* Supporting Files */,
@@ -242,6 +253,7 @@
 				294E36DD1D5CBEFF002230DF /* TestData.swift in Sources */,
 				294E36D81D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift in Sources */,
 				2A0C2B3F1D5BAA98008027CA /* AvatarImageViewTests.swift in Sources */,
+				294E36E01D5CC7E8002230DF /* SaveImageUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

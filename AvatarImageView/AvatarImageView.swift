@@ -16,7 +16,7 @@ import UIKit
  
  This library assumes that the view will be a square. There is no code to handle views where width != height and could lead to weird behaviour.
  
- The background color and image will be set to `clear()` and `nil` at initialisation, so these values should not be set in the storyboard. 
+ The background color and image will be set to `clear()` and `nil` at initialisation, so these values should not be set in the storyboard or passed in at initialisation time.
  */
 
 public class AvatarImageView: UIImageView {
@@ -42,9 +42,8 @@ public class AvatarImageView: UIImageView {
         setup()
     }
     
-    override init(image: UIImage?) {
+    override private init(image: UIImage?) {
         super.init(image: image)
-        setup()
     }
     
     required public init?(coder aDecoder: NSCoder) {
