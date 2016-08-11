@@ -18,17 +18,27 @@ class SaveImageUtility: XCTestCase {
         let data = TestData(name: "John Appleseed")
         
         var config = TestConfig()
-        config.shape = .Circle
+        config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
         
         let avatarImageView = AvatarImageView(frame: CGRectMake(0, 0, 100, 100))
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
+//        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
+        let imageData = UIImagePNGRepresentation(imageFrom(avatarImageView))
         let simluatorDesktopPath = NSSearchPathForDirectoriesInDomains(.DesktopDirectory, .UserDomainMask, true).first!
         let splitPath = simluatorDesktopPath.componentsSeparatedByString("/")
         let path = "/\(splitPath[1])/\(splitPath[2])/Desktop/image.png"
         
         NSFileManager.defaultManager().createFileAtPath(path, contents: imageData, attributes: nil)
+    }
+    
+    func imageFrom(view: UIView) -> UIImage {
+        UIGraphicsBeginImageContext(view.bounds.size)
+        let context = UIGraphicsGetCurrentContext()!
+        view.layer.renderInContext(context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }
