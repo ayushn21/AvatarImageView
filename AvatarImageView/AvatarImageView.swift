@@ -83,7 +83,7 @@ public class AvatarImageView: UIImageView {
             CGContextClip(context)
             break
         case .Mask(let image):
-            mask(layer layer, withImage: image)
+            mask(layer: layer, withImage: image)
         default:
             break
         }
