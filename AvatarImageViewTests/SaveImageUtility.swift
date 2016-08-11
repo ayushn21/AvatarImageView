@@ -11,12 +11,11 @@ import XCTest
 @testable import AvatarImageView
 
 // THIS SHOULD NOT RUN AS PART OF A NORMAL TEST RUN. It is meant to be used to save generated images to then compare them in unit tests.
-// Uncomment to use and then comment again
+// This test case is disabled in the scheme.
 class SaveImageUtility: XCTestCase {
     
     func testSaveImage() {
         var data = TestData(name: "John Appleseed")
-        data.bgColor = UIColor.blackColor()
         data.avatar = UIImage(namedInTest: "profile_pic")!
         
         var config = TestConfig()
