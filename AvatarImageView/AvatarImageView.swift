@@ -82,7 +82,18 @@ public class AvatarImageView: UIImageView {
             CGContextClip(context)
         }
         
-        CGContextSetFillColorWithColor(context, data.bgColor == nil ? randomColor() : data.bgColor!.CGColor)
+        var bgColor: CGColor! = nil
+        if let color = data.bgColor {
+            bgColor = color.CGColor
+        }
+        else if let color = configuration.bgColor {
+            bgColor = color.CGColor
+        }
+        else {
+            bgColor = randomColor()
+        }
+        
+        CGContextSetFillColorWithColor(context, bgColor)
         CGContextFillRect(context, self.bounds)
         
         let initials = data.initials as NSString

@@ -44,7 +44,7 @@ public protocol AvatarImageViewDataSource {
     
     /**
      The background color for the initials. This value DOES NOT set the background color of the image view.<br />
-     If this is nil, a random color will be generated.
+     If this is nil, the configuartion's `bgColor` will be used. If that is also nil, a random color will be generated.
      */
     var bgColor: UIColor? { get }
     
@@ -64,6 +64,9 @@ public protocol AvatarImageViewConfiguration {
     
     /// The name of the font to be used to draw text. If this is nil, the system font will be used.
     var fontName: String? { get }
+    
+    /// The background color for the initials. The color specified in the `AvatarImageViewDataSource` takes precedence over this. If this and the data source's color are nil, a random color will be generated.
+    var bgColor: UIColor? { get }
     
     /// The color of the text.
     var textColor: UIColor { get }
@@ -145,7 +148,14 @@ public extension AvatarImageViewConfiguration {
         }
     }
     
-    // returns `UIColor.white()`
+    /// returns `nil`
+    var bgColor: UIColor? {
+        get {
+            return nil
+        }
+    }
+    
+    /// returns `UIColor.white()`
     var textColor: UIColor {
         get {
             return UIColor.whiteColor()
