@@ -13,13 +13,26 @@ public enum Shape {
     case Square
 }
 
+/**
+ 
+ */
+
 public class AvatarImageView: UIImageView {
     
-    public var data: AvatarImageViewDataSource? {
+    /// The data source to populate the Avatar Image
+    public var dataSource: AvatarImageViewDataSource? {
         didSet {
-            setup()
+            refresh()
         }
     }
+    
+    /** 
+     The configuration for the AvatarImageView. Use this for settings such as shape, font size, etc.
+     Always set this value BEFORE the data source, otherwise the view will not render correctly.
+     
+     If you would like to set this value after the data source, you need to call `setNeedsDisplay()` to re-draw the view correctly.
+     
+    */
     public var configuration: AvatarImageViewConfiguration
         = DefaultConfiguration()
     
@@ -40,20 +53,7 @@ public class AvatarImageView: UIImageView {
     
     func setup() {
         backgroundColor = UIColor.clearColor()
-        
-        guard let data = data else {
-            image = nil
-            return
-        }
-        
-        if let avatar = data.avatar {
-            image = avatar
-            if configuration.shape == .Circle { layer.cornerRadius = bounds.size.width/2 }
-        }
-        else {
-            image = drawImageWith(data: data)
-        }
-        setNeedsDisplay()
+        image = nil
     }
     
     func textAttributes(fromData data: AvatarImageViewDataSource) -> [String : AnyObject] {
@@ -100,6 +100,25 @@ public class AvatarImageView: UIImageView {
         
         return image
     }
+    
+    // MARK:- Public Methods
+    
+    public func refresh() {
+        guard let dataSource = dataSource else {
+            image = nil
+            return
+        }
+        
+        if let avatar = dataSource.avatar {
+            image = avatar
+            if configuration.shape == .Circle { layer.cornerRadius = bounds.size.width/2 }
+        }
+        else {
+            image = drawImageWith(data: dataSource)
+        }
+        setNeedsDisplay()
+    }
+
 
     // MARK:- Utilities
     
