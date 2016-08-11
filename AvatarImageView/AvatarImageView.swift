@@ -56,7 +56,7 @@ public class AvatarImageView: UIImageView {
         image = nil
     }
     
-    func textAttributes(fromData data: AvatarImageViewDataSource) -> [String : AnyObject] {
+    func textAttributesFrom(data data: AvatarImageViewDataSource) -> [String : AnyObject] {
         var attributes: [String : AnyObject] = [NSForegroundColorAttributeName : configuration.textColor]
         let fontSize = bounds.size.width * configuration.textSizeFactor
         
@@ -103,7 +103,7 @@ public class AvatarImageView: UIImageView {
         CGContextFillRect(context, self.bounds)
         
         let initials = data.initials as NSString
-        let textAttrs = textAttributes(fromData: data)
+        let textAttrs = textAttributesFrom(data: data)
         let textRectSize = initials.sizeWithAttributes(textAttrs)
         let textRect = CGRectMake(bounds.size.width / 2 - textRectSize.width / 2,
                               bounds.size.height / 2 - textRectSize.height / 2,
