@@ -8,13 +8,15 @@
 
 import UIKit
 
-public enum Shape {
-    case Circle
-    case Square
-}
-
 /**
+ A subclass of `UIImageView` that is designed to show a user's profile picture. It will fall back to the user's initials if a picture is not supplied.
+ An implementation of the `AvatarImageViewDataSource` must be supplied to populate the image view. Optionally, you can also set a configuration that conforms to `AvatarImageViewConfiguration`.
  
+ Please see the docs for `AvatarImageViewDataSource` and `AvatarImageViewConfiguration` for further information.
+ 
+ This library assumes that the view will be a square. There is no code to handle views where width != height and could lead to weird behaviour.
+ 
+ The background color and image will be set to `clear()` and `nil` at initialisation, so these values should not be set in the storyboard. 
  */
 
 public class AvatarImageView: UIImageView {
@@ -30,8 +32,7 @@ public class AvatarImageView: UIImageView {
      The configuration for the AvatarImageView. Use this for settings such as shape, font size, etc.
      Always set this value BEFORE the data source, otherwise the view will not render correctly.
      
-     If you would like to set this value after the data source, you need to call `setNeedsDisplay()` to re-draw the view correctly.
-     
+     If you would like to set this value after the data source, you need to call `refresh()` to re-draw the view correctly.
     */
     public var configuration: AvatarImageViewConfiguration
         = DefaultConfiguration()
@@ -101,8 +102,7 @@ public class AvatarImageView: UIImageView {
         return image
     }
     
-    // MARK:- Public Methods
-    
+    /// Redraws the image based on the current data source and configuration
     public func refresh() {
         guard let dataSource = dataSource else {
             image = nil
