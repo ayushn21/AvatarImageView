@@ -25,7 +25,7 @@ class SaveImageUtility: XCTestCase {
         avatarImageView.dataSource = data
         
 //        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let imageData = UIImagePNGRepresentation(imageFrom(avatarImageView))
+        let imageData = UIImagePNGRepresentation(imageFrom(view: avatarImageView))
         let simluatorDesktopPath = NSSearchPathForDirectoriesInDomains(.DesktopDirectory, .UserDomainMask, true).first!
         let splitPath = simluatorDesktopPath.componentsSeparatedByString("/")
         let path = "/\(splitPath[1])/\(splitPath[2])/Desktop/image.png"
@@ -33,7 +33,7 @@ class SaveImageUtility: XCTestCase {
         NSFileManager.defaultManager().createFileAtPath(path, contents: imageData, attributes: nil)
     }
     
-    func imageFrom(view: UIView) -> UIImage {
+    func imageFrom(view view: UIView) -> UIImage {
         UIGraphicsBeginImageContext(view.bounds.size)
         let context = UIGraphicsGetCurrentContext()!
         view.layer.renderInContext(context)
