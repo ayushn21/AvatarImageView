@@ -11,6 +11,7 @@
 		294E36DD1D5CBEFF002230DF /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36DC1D5CBEFF002230DF /* TestData.swift */; };
 		294E36E01D5CC7E8002230DF /* SaveImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36DF1D5CC7E8002230DF /* SaveImageUtility.swift */; };
 		294E36E21D5CD117002230DF /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 294E36E11D5CD117002230DF /* TestAssets.xcassets */; };
+		294E36E41D5CD7A9002230DF /* UIImage+TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36E31D5CD7A9002230DF /* UIImage+TestUtils.swift */; };
 		2A0C2B331D5BAA98008027CA /* AvatarImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A0C2B321D5BAA98008027CA /* AvatarImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A0C2B3A1D5BAA98008027CA /* AvatarImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0C2B2F1D5BAA98008027CA /* AvatarImageView.framework */; };
 		2A0C2B3F1D5BAA98008027CA /* AvatarImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2B3E1D5BAA98008027CA /* AvatarImageViewTests.swift */; };
@@ -33,6 +34,7 @@
 		294E36DC1D5CBEFF002230DF /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		294E36DF1D5CC7E8002230DF /* SaveImageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveImageUtility.swift; sourceTree = "<group>"; };
 		294E36E11D5CD117002230DF /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
+		294E36E31D5CD7A9002230DF /* UIImage+TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+TestUtils.swift"; sourceTree = "<group>"; };
 		2A0C2B2F1D5BAA98008027CA /* AvatarImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AvatarImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0C2B321D5BAA98008027CA /* AvatarImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarImageView.h; sourceTree = "<group>"; };
 		2A0C2B341D5BAA98008027CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				294E36DF1D5CC7E8002230DF /* SaveImageUtility.swift */,
+				294E36E31D5CD7A9002230DF /* UIImage+TestUtils.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				294E36DD1D5CBEFF002230DF /* TestData.swift in Sources */,
 				294E36D81D5CBB4D002230DF /* AvatarImageViewConfigurationTests.swift in Sources */,
+				294E36E41D5CD7A9002230DF /* UIImage+TestUtils.swift in Sources */,
 				2A0C2B3F1D5BAA98008027CA /* AvatarImageViewTests.swift in Sources */,
 				294E36E01D5CC7E8002230DF /* SaveImageUtility.swift in Sources */,
 			);
