@@ -10,7 +10,8 @@ import UIKit
 import XCTest
 @testable import AvatarImageView
 
-/// THIS SHOULD NOT RUN AS PART OF A NORMAL TEST RUN. It is meant to be used to save generated images to then compare them in unit tests.
+// THIS SHOULD NOT RUN AS PART OF A NORMAL TEST RUN. It is meant to be used to save generated images to then compare them in unit tests.
+// Uncomment to use and then comment again
 class SaveImageUtility: XCTestCase {
     
     func testSaveImage() {
