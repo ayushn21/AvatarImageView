@@ -12,6 +12,7 @@ import Foundation
 struct TestData: AvatarImageViewDataSource {
     var name: String
     var bgColor: UIColor?
+    var avatar: UIImage?
     
     init(name: String) {
         self.name = name

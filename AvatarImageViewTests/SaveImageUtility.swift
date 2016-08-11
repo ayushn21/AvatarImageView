@@ -17,6 +17,7 @@ class SaveImageUtility: XCTestCase {
     func testSaveImage() {
         var data = TestData(name: "John Appleseed")
         data.bgColor = UIColor.blackColor()
+        data.avatar = UIImage(namedInTest: "profile_pic")!
         
         let avatarImageView = AvatarImageView(frame: CGRectMake(0, 0, 100, 100))
         avatarImageView.dataSource = data
