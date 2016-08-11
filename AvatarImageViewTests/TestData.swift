@@ -18,3 +18,7 @@ struct TestData: AvatarImageViewDataSource {
         self.name = name
     }
 }
+
+struct TestConfig: AvatarImageViewConfiguration {
+    var shape: Shape = .Square
+}

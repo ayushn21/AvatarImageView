@@ -19,6 +19,9 @@ class SaveImageUtility: XCTestCase {
         data.bgColor = UIColor.blackColor()
         data.avatar = UIImage(namedInTest: "profile_pic")!
         
+        var config = TestConfig()
+        config.shape = .Circle
+        
         let avatarImageView = AvatarImageView(frame: CGRectMake(0, 0, 100, 100))
         avatarImageView.dataSource = data
         
