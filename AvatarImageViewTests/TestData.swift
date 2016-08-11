@@ -11,7 +11,6 @@ import Foundation
 
 struct TestData: AvatarImageViewDataSource {
     var name: String
-    let bgColor = UIColor.blackColor()
     var avatar: UIImage?
     
     init(name: String) {
@@ -21,4 +20,5 @@ struct TestData: AvatarImageViewDataSource {
 
 struct TestConfig: AvatarImageViewConfiguration {
     var shape: Shape = .Square
+    let bgColor: UIColor? = UIColor.blackColor()
 }
