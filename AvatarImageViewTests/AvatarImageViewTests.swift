@@ -223,10 +223,12 @@ class AvatarImageViewTests: XCTestCase {
     
     func testRandomColorForUser() {
         let dataOne = TestData(name: "John Appleseed")
-        let configOne = TestConfig()
+        var configOne = TestConfig()
+        configOne.bgColor = nil
         
         let dataTwo = TestData(name: "John Appleseed")
-        let configTwo = TestConfig()
+        var configTwo = TestConfig()
+        configTwo.bgColor = nil
         
         let avatarImageViewOne = AvatarImageView(frame: imageRect)
         avatarImageViewOne.configuration = configOne
