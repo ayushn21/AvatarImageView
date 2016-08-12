@@ -15,28 +15,31 @@ import XCTest
 class SaveImageUtility: XCTestCase {
     
     func testSaveImage() {
-        let data = TestData(name: "John Appleseed")
+        var data = TestData(name: "John Appleseed")
+        data.avatar = UIImage(namedInTest: "profile_pic")!
         
         var config = TestConfig()
-        config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
+        config.shape = .Circle
         
         let avatarImageView = AvatarImageView(frame: CGRectMake(0, 0, 100, 100))
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
 //        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let imageData = UIImagePNGRepresentation(imageFrom(view: avatarImageView))
+        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())
         let simluatorDesktopPath = NSSearchPathForDirectoriesInDomains(.DesktopDirectory, .UserDomainMask, true).first!
         let splitPath = simluatorDesktopPath.componentsSeparatedByString("/")
         let path = "/\(splitPath[1])/\(splitPath[2])/Desktop/image.png"
         
         NSFileManager.defaultManager().createFileAtPath(path, contents: imageData, attributes: nil)
     }
-    
-    func imageFrom(view view: UIView) -> UIImage {
-        UIGraphicsBeginImageContext(view.bounds.size)
+}
+
+extension UIView {
+    func asImage() -> UIImage {
+        UIGraphicsBeginImageContext(bounds.size)
         let context = UIGraphicsGetCurrentContext()!
-        view.layer.renderInContext(context)
+        layer.renderInContext(context)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
