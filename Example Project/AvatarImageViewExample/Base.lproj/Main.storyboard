@@ -43,7 +43,7 @@
         <!--Avatar Table-->
         <scene sceneID="asd-BF-Tbl">
             <objects>
-                <viewController id="6sR-xD-ylc" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="6sR-xD-ylc" customClass="AvatarTableViewController" customModule="AvatarImageViewExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pep-Rj-Bf2"/>
                         <viewControllerLayoutGuide type="bottom" id="jG8-kQ-FkI"/>
@@ -52,11 +52,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWn-Nk-6Eg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWn-Nk-6Eg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="gYN-1N-SyK" customClass="AvatarTableViewCell" customModule="AvatarImageViewExample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="avatarCell" rowHeight="120" id="gYN-1N-SyK" customClass="AvatarTableViewCell" customModule="AvatarImageViewExample" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gYN-1N-SyK" id="5ZA-ht-yMe">
@@ -66,13 +66,15 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="12o-Ze-qdZ" customClass="AvatarImageView" customModule="AvatarImageView">
                                                     <rect key="frame" x="8" y="20" width="80" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="Wpb-Qh-MsK"/>
+                                                        <constraint firstAttribute="height" constant="80" id="gb5-ke-GBl"/>
                                                         <constraint firstAttribute="width" constant="80" id="iXi-jh-I9Q"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="12o-Ze-qdZ" firstAttribute="centerY" secondItem="5ZA-ht-yMe" secondAttribute="centerY" id="MWX-ll-TsD"/>
+                                                <constraint firstItem="12o-Ze-qdZ" firstAttribute="centerY" secondItem="5ZA-ht-yMe" secondAttribute="centerY" id="FVd-dB-U5L"/>
+                                                <constraint firstItem="12o-Ze-qdZ" firstAttribute="top" secondItem="5ZA-ht-yMe" secondAttribute="top" constant="20" id="Jhv-eq-xxf"/>
+                                                <constraint firstAttribute="bottom" secondItem="12o-Ze-qdZ" secondAttribute="bottom" constant="19" id="JwN-Bx-ALZ"/>
                                                 <constraint firstItem="12o-Ze-qdZ" firstAttribute="leading" secondItem="5ZA-ht-yMe" secondAttribute="leading" constant="8" id="eZ4-qg-6ae"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -81,11 +83,24 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6sR-xD-ylc" id="Nci-Wy-J5W"/>
+                                    <outlet property="delegate" destination="6sR-xD-ylc" id="x1o-qp-kyr"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UWn-Nk-6Eg" firstAttribute="leading" secondItem="MdG-YW-IBt" secondAttribute="leading" id="0hc-EA-zwL"/>
+                            <constraint firstItem="UWn-Nk-6Eg" firstAttribute="top" secondItem="MdG-YW-IBt" secondAttribute="top" id="An0-aZ-gTb"/>
+                            <constraint firstAttribute="trailing" secondItem="UWn-Nk-6Eg" secondAttribute="trailing" id="XWl-RL-rxf"/>
+                            <constraint firstItem="jG8-kQ-FkI" firstAttribute="top" secondItem="UWn-Nk-6Eg" secondAttribute="bottom" id="skg-Yr-5vF"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Avatar Table" id="31P-wT-HHz"/>
+                    <connections>
+                        <outlet property="tableView" destination="UWn-Nk-6Eg" id="BMG-2L-sHH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FG-bc-YRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

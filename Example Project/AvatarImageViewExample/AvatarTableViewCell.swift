@@ -9,6 +9,14 @@
 import UIKit
 import AvatarImageView
 
+struct TableAvatarImageConfig: AvatarImageViewConfiguration {
+    let shape: Shape = .Circle
+}
+
 class AvatarTableViewCell: UITableViewCell {
-    @IBOutlet var avatarImageView: AvatarImageView!
+    @IBOutlet var avatarImageView: AvatarImageView! {
+        didSet {
+            avatarImageView.configuration = TableAvatarImageConfig()
+        }
+    }
 }
