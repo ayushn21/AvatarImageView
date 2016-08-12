@@ -15,7 +15,7 @@ public enum Shape {
      If no image is supplied and the view draws initials, the resulting image will be clipped to a circle using a `CGPath`.
      */
     case Circle
-    /// This will leave the view's corner radius untouched and will not perform any clipped.
+    /// This will leave the view's corner radius untouched and will not perform any clipping.
     case Square
     
     /// Specify a custom shape using a mask image. Please ensure this image is of equal height and width.
