@@ -241,4 +241,74 @@ class AvatarImageViewTests: XCTestCase {
         
         XCTAssert(imageDataOne.isEqualToData(imageDataTwo), "The image data should match")
     }
+    
+    // MARK:- Custom Font Tests
+    
+    func testSquareImageWithCustomFont() {
+        let data = TestData(name: "John Appleseed")
+        
+        var config = TestConfig()
+        config.shape = .Square
+        config.fontName = "Futura-Medium"
+        
+        let avatarImageView = AvatarImageView(frame: imageRect)
+        avatarImageView.configuration = config
+        avatarImageView.dataSource = data
+        
+        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
+        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "custom_font_square")!)!
+        
+        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+    }
+    
+    func testCircleImageWithCustomFont() {
+        let data = TestData(name: "John Appleseed")
+        
+        var config = TestConfig()
+        config.shape = .Circle
+        config.fontName = "Futura-Medium"
+        
+        let avatarImageView = AvatarImageView(frame: imageRect)
+        avatarImageView.configuration = config
+        avatarImageView.dataSource = data
+        
+        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
+        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "custom_font_circle")!)!
+        
+        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+    }
+    
+    func testMaskImageWithCustomFont() {
+        let data = TestData(name: "John Appleseed")
+        
+        var config = TestConfig()
+        config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
+        config.fontName = "Futura-Medium"
+        
+        let avatarImageView = AvatarImageView(frame: imageRect)
+        avatarImageView.configuration = config
+        avatarImageView.dataSource = data
+        
+        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
+        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "custom_font_mask")!)!
+        
+        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+    }
+    
+    func testImageWithInvalidCustomFont() {
+        let data = TestData(name: "John Appleseed")
+        
+        var config = TestConfig()
+        config.shape = .Square
+        config.fontName = "invalid"
+        
+        let avatarImageView = AvatarImageView(frame: imageRect)
+        avatarImageView.configuration = config
+        avatarImageView.dataSource = data
+        
+        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
+        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "invalid_font_square")!)!
+        
+        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+    }
 }
