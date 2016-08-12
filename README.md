@@ -1,3 +1,14 @@
+<p align = "center">
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/SwiftLogger)
+[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2-orange.svg)](https://developer.apple.com/swift)
+<p>
+
+#### Build Status
+Develop: [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=develop)](https://travis-ci.org/ayushn21/AvatarImageView)
+
+Master: [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=master)](https://travis-ci.org/ayushn21/AvatarImageView)
+
 ## Description
 
 `AvatarImageView` is a customisable subclass of UIImageView that is designed to show users' profile pictures. It falls back to the user's initials with a random background color if no profile picture is supplied.
@@ -30,24 +41,28 @@ The random background colour is held in memory for each unique user, so if you h
 
 The image view can be drawn as a square or circle out of the box. You can even sepcify a mask image if you want a custom shape. These settings are done in an `AvatarImageViewConfiguration`. Here are some examples for initials being drawn in different shapes.
 
+<p align = "center">
 ![Square Initials](./Screenshots/square_initials.png)
 ![Circle Initials](./Screenshots/circle_initials.png)
 ![Mask Initials](./Screenshots/mask_initials.png)
-
+<p>
 <br /><br />
 Here's an example of when the `dataSource` supplies a profile picture and the `configuration` is set to a circle.
 
+<p align = "center">
 ![Circle Profile Pic](./Screenshots/circle_profile_pic.png)
-
+<p>
 <br /><br />
 It works great with custom fonts!
 
+<p align = "center">
 ![Custom Font](./Screenshots/circle_custom_font.png)
-
+<p>
 ...and also with `UITableView`s
 
+<p align = "center">
 ![Table View Pics](./Screenshots/table_view.png)
-
+<p>
 ####Example Project
 
 Please refer to the example project in this repository for an implementation of all the above use cases. If you find any bugs, open a GitHub issue!
