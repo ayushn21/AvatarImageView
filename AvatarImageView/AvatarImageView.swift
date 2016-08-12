@@ -100,7 +100,7 @@ public class AvatarImageView: UIImageView {
             bgColor = color.CGColor
         }
         else {
-            bgColor = backgroundColorFor(hash: data.hashValue)
+            bgColor = backgroundColorFor(hash: data.avatarId)
         }
         
         CGContextSetFillColorWithColor(context, bgColor)

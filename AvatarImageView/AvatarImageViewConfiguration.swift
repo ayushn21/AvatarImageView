@@ -44,9 +44,9 @@ public protocol AvatarImageViewDataSource {
     var initials: String { get }
     
     /**
-     The hash value is used to ensure uniqueness of colors across users. This protocol does not inherit from `Hashable` due to the way Swift's type system work with `Equatable`.
+     This is a hash used to ensure uniqueness of colors across users. This protocol does not inherit from `Hashable` due to the way Swift's type system work with `Equatable`.
      */
-    var hashValue: Int { get }
+    var avatarId: Int { get }
 }
 
 /**
@@ -126,7 +126,7 @@ public extension AvatarImageViewDataSource {
     }
     
     ///  returns the hash values of the name and initials combined with an XOR operator. This could be improved by adding something more unique like an email address to the hash.
-    var hashValue: Int {
+    var avatarId: Int {
         get {
             return name.hashValue ^ initials.hashValue
         }

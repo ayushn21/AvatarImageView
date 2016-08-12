@@ -14,7 +14,7 @@ The `AvatarImageViewDataSource` contains the follwing members. All have default 
 * `var avatar: UIImage? { get }` - Default: returns `nil`
 * `var bgColor: UIColor? { get }` - Default: returns `nil` 
 * `var initials: String { get }` - Default: returns initials calculated from the name.
-* `var hashValue: Int { get }` - Default: returns the hash values of the name and initials combined using XOR.
+* `var avatarId: Int { get }` - Default: returns the hash values of the name and initials combined using XOR.
 
 The `AvatarImageViewConfiguration` contains the follwing members. All have default implementations and are hence optional.
 
