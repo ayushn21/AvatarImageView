@@ -10,6 +10,8 @@ To set up `AvatarImageView`, a `dataSource` that conforms to `AvatarImageViewDat
 
 The random background colour is held in memory for each unique user, so if you have `AvatarImageView`s in different parts of your app, the background color for a particular user will be the same in both in the same session. I'm working on persisting this store so the color is consistent across all sessions.
 
+Check out the [docs](http://cocoadocs.org/docsets/AvatarImageView/) for more information.
+
 The image view can be drawn as a square or circle out of the box. You can even sepcify a mask image if you want a custom shape. These settings are done in an `AvatarImageViewConfiguration`. Here are some examples for initials being drawn in different shapes.
 
 ![Square Initials](./Screenshots/square_initials.png)
