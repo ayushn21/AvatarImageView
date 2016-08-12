@@ -29,6 +29,15 @@ class SingleAvatarViewController: UIViewController {
         avatarImageView.configuration = Config()
     }
     
+    func configureRoundAvatarWithCustomFont() {
+        struct Config: AvatarImageViewConfiguration {
+            var shape: Shape = .Circle
+            var fontName: String? = "Futura-Medium"
+            
+        }
+        avatarImageView.configuration = Config()
+    }
+    
     func showProfilePicture() {
         var data = ExampleData()
         data.avatar = UIImage(named: "profile_pic")!
