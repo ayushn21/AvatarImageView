@@ -23,7 +23,7 @@ import UIKit
 
 public class AvatarImageView: UIImageView {
     
-    static var ColorMap: [Int : String] = [:]
+    static var colorMap: [Int : String] = [:]
     
     /// The data source to populate the Avatar Image
     public var dataSource: AvatarImageViewDataSource? {
@@ -151,7 +151,7 @@ public class AvatarImageView: UIImageView {
     // MARK:- Utilities
     
     private func backgroundColorFor(hash hash: Int) -> CGColor {
-        if let colorString = AvatarImageView.ColorMap[hash] {
+        if let colorString = AvatarImageView.colorMap[hash] {
             let colors = colorString.componentsSeparatedByString("^")
             
             let red = CGFloat((colors[0] as NSString).doubleValue)
@@ -162,7 +162,7 @@ public class AvatarImageView: UIImageView {
         }
         else {
             let randomColorInfo = randomColor()
-            AvatarImageView.ColorMap[hash] = randomColorInfo.1
+            AvatarImageView.colorMap[hash] = randomColorInfo.1
             return randomColorInfo.0
         }
     }
