@@ -25,10 +25,9 @@ public enum Shape {
 /**
  This protocol supplies data to the AvatarImageView. Ideally you should add this protocol to your model and just pass that in.<br />
  All the fields are optional as they have default implementations.
- 
- There is a default implementation of `Hashable` to enable random background colors to be unique across different users. You can improve the default implementation if you wish to ensure there are no conflicts.
  */
-public protocol AvatarImageViewDataSource: Hashable {
+public protocol AvatarImageViewDataSource {
+    
     /// The user's name. This will be used to generate the initials.
     var name: String { get }
     
@@ -43,6 +42,11 @@ public protocol AvatarImageViewDataSource: Hashable {
     
     /// If you prefer to specify your own initials, implement this field.
     var initials: String { get }
+    
+    /**
+     The hash value is used to ensure uniqueness of colors across users. This protocol does not inherit from `Hashable` due to the way Swift's type system work with `Equatable`.
+     */
+    var hashValue: Int { get }
 }
 
 /**
@@ -121,7 +125,7 @@ public extension AvatarImageViewDataSource {
         }
     }
     
-    ///  returns the hash values of the name and initials combined with an XOR operator
+    ///  returns the hash values of the name and initials combined with an XOR operator. This could be improved by adding something more unique like an email address to the hash.
     var hashValue: Int {
         get {
             return name.hashValue ^ initials.hashValue
