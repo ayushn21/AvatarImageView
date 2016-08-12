@@ -81,7 +81,7 @@ AvatarImageView requires at least iOS 8.
 
 ## Installation
 
-SwiftLogger is available through [CocoaPods](http://cocoapods.org). To install
+AvatarImageView is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following lines to your Podfile:
 
     use_frameworks!
