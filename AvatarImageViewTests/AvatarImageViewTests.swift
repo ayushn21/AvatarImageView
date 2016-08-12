@@ -240,6 +240,5 @@ class AvatarImageViewTests: XCTestCase {
         let imageDataTwo = UIImagePNGRepresentation(avatarImageViewTwo.asImage())!
         
         XCTAssert(imageDataOne.isEqualToData(imageDataTwo), "The image data should match")
-
     }
 }
