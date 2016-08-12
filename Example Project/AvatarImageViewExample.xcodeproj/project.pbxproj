@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		294E36F21D5E0B72002230DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36F11D5E0B72002230DF /* AppDelegate.swift */; };
-		294E36F41D5E0B72002230DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36F31D5E0B72002230DF /* ViewController.swift */; };
+		294E36F41D5E0B72002230DF /* SingleAvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E36F31D5E0B72002230DF /* SingleAvatarViewController.swift */; };
 		294E36F71D5E0B72002230DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294E36F51D5E0B72002230DF /* Main.storyboard */; };
 		294E36F91D5E0B72002230DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 294E36F81D5E0B72002230DF /* Assets.xcassets */; };
 		294E36FC1D5E0B72002230DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294E36FA1D5E0B72002230DF /* LaunchScreen.storyboard */; };
+		294E37041D5E0D20002230DF /* AvatarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E37031D5E0D20002230DF /* AvatarTableViewController.swift */; };
+		294E370A1D5E0E9F002230DF /* AvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E37091D5E0E9F002230DF /* AvatarTableViewCell.swift */; };
 		4F64CD04ABE743694C9A6D85 /* Pods_AvatarImageViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601C06695C9C0A87C518D6A6 /* Pods_AvatarImageViewExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		294E36EE1D5E0B72002230DF /* AvatarImageViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvatarImageViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		294E36F11D5E0B72002230DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		294E36F31D5E0B72002230DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		294E36F31D5E0B72002230DF /* SingleAvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAvatarViewController.swift; sourceTree = "<group>"; };
 		294E36F61D5E0B72002230DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		294E36F81D5E0B72002230DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		294E36FB1D5E0B72002230DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		294E36FD1D5E0B72002230DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		294E37031D5E0D20002230DF /* AvatarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarTableViewController.swift; sourceTree = "<group>"; };
+		294E37091D5E0E9F002230DF /* AvatarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarTableViewCell.swift; sourceTree = "<group>"; };
 		601C06695C9C0A87C518D6A6 /* Pods_AvatarImageViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvatarImageViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E27C0CD899AC57A65A4FAD /* Pods-AvatarImageViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvatarImageViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvatarImageViewExample/Pods-AvatarImageViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		E2605A1B99248F682F77F80A /* Pods-AvatarImageViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvatarImageViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvatarImageViewExample/Pods-AvatarImageViewExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,13 +66,47 @@
 			isa = PBXGroup;
 			children = (
 				294E36F11D5E0B72002230DF /* AppDelegate.swift */,
-				294E36F31D5E0B72002230DF /* ViewController.swift */,
-				294E36F51D5E0B72002230DF /* Main.storyboard */,
-				294E36F81D5E0B72002230DF /* Assets.xcassets */,
-				294E36FA1D5E0B72002230DF /* LaunchScreen.storyboard */,
 				294E36FD1D5E0B72002230DF /* Info.plist */,
+				294E37051D5E0E5C002230DF /* View Controllers */,
+				294E37081D5E0E86002230DF /* Views */,
+				294E37061D5E0E68002230DF /* Storyboards */,
+				294E37071D5E0E7E002230DF /* Assets */,
 			);
 			path = AvatarImageViewExample;
+			sourceTree = "<group>";
+		};
+		294E37051D5E0E5C002230DF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				294E36F31D5E0B72002230DF /* SingleAvatarViewController.swift */,
+				294E37031D5E0D20002230DF /* AvatarTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		294E37061D5E0E68002230DF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				294E36FA1D5E0B72002230DF /* LaunchScreen.storyboard */,
+				294E36F51D5E0B72002230DF /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		294E37071D5E0E7E002230DF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				294E36F81D5E0B72002230DF /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		294E37081D5E0E86002230DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				294E37091D5E0E9F002230DF /* AvatarTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		BA8BE3A8F9D5D5DB5744FA57 /* Frameworks */ = {
@@ -210,7 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				294E36F41D5E0B72002230DF /* ViewController.swift in Sources */,
+				294E37041D5E0D20002230DF /* AvatarTableViewController.swift in Sources */,
+				294E36F41D5E0B72002230DF /* SingleAvatarViewController.swift in Sources */,
+				294E370A1D5E0E9F002230DF /* AvatarTableViewCell.swift in Sources */,
 				294E36F21D5E0B72002230DF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

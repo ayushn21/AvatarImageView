@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AvatarTableViewCell.swift
 //  AvatarImageViewExample
 //
 //  Created by Ayush Newatia on 12/08/2016.
@@ -7,9 +7,8 @@
 //
 
 import UIKit
+import AvatarImageView
 
-class ViewController: UIViewController {
-
-
+class AvatarTableViewCell: UITableViewCell {
+    @IBOutlet var avatarImageView: AvatarImageView!
 }
-
