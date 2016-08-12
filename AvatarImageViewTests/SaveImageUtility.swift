@@ -15,33 +15,38 @@ import XCTest
 class SaveImageUtility: XCTestCase {
     
     func testSaveImage() {
-        var data = TestData(name: "John Appleseed")
-        data.avatar = UIImage(namedInTest: "profile_pic")!
+        let data = TestData(name: "")
         
         var config = TestConfig()
-        config.shape = .Circle
+        config.shape = .Square
         
         let avatarImageView = AvatarImageView(frame: CGRectMake(0, 0, 100, 100))
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
 //        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())
-        let simluatorDesktopPath = NSSearchPathForDirectoriesInDomains(.DesktopDirectory, .UserDomainMask, true).first!
-        let splitPath = simluatorDesktopPath.componentsSeparatedByString("/")
-        let path = "/\(splitPath[1])/\(splitPath[2])/Desktop/image.png"
-        
-        NSFileManager.defaultManager().createFileAtPath(path, contents: imageData, attributes: nil)
+        avatarImageView.asImage().saveToDesktop()
     }
 }
 
 extension UIView {
     func asImage() -> UIImage {
-        UIGraphicsBeginImageContext(bounds.size)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 3.0)
         let context = UIGraphicsGetCurrentContext()!
         layer.renderInContext(context)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
+    }
+}
+
+extension UIImage {
+    func saveToDesktop(withName name: String = "image.png") {
+        let imageData = UIImagePNGRepresentation(self)
+        let simluatorDesktopPath = NSSearchPathForDirectoriesInDomains(.DesktopDirectory, .UserDomainMask, true).first!
+        let splitPath = simluatorDesktopPath.componentsSeparatedByString("/")
+        let path = "/\(splitPath[1])/\(splitPath[2])/Desktop/\(name)"
+        
+        NSFileManager.defaultManager().createFileAtPath(path, contents: imageData, attributes: nil)
     }
 }
