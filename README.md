@@ -8,9 +8,25 @@ This library was inspired by and is supposed to be a Swift rewrite of [bachonk/U
 
 To set up `AvatarImageView`, a `dataSource` that conforms to `AvatarImageViewDataSource` needs to be set. Optionally a `configuration` that conforms to `AvatarImageViewConfiguration` can also be set. The default configuration will show a square picture; and if no profile picture is supplied, it will draw the initials with the system font on a random background color.
 
-The random background colour is held in memory for each unique user, so if you have `AvatarImageView`s in different parts of your app, the background color for a particular user will be the same in both in the same session. I'm working on persisting this store so the color is consistent across all sessions.
+The `AvatarImageViewDataSource` contains the follwing members. All have default implementations and are hence optional.
+
+* `var name: String { get }` - Default: returns `""`
+* `var avatar: UIImage? { get }` - Default: returns `nil`
+* `var bgColor: UIColor? { get }` - Default: returns `nil` 
+* `var initials: String { get }` - Default: returns initials calculated from the name.
+* `var hashValue: Int { get }` - Default: returns the hash values of the name and initials combined using XOR.
+
+The `AvatarImageViewConfiguration` contains the follwing members. All have default implementations and are hence optional.
+
+* `var shape: Shape { get }` - Default: returns `.Square`
+* `var textSizeFactor: CGFloat { get }` - Default: returns `0.5`
+* `var fontName: String? { get }` - Default: returns `nil` 
+* `var bgColor: UIColor? { get }` - Default: returns in`nil`. The `bgColor` in `AvatarImageViewDataSource` will take precedence over this one.
+* `var textColor: UIColor { get }` - Default: returns `UIColor.white()`.
 
 Check out the [docs](http://cocoadocs.org/docsets/AvatarImageView/) for more information.
+
+The random background colour is held in memory for each unique user, so if you have `AvatarImageView`s in different parts of your app, the background color for a particular user will be the same in both in the same session. I'm working on persisting this store so the color is consistent across all sessions.
 
 The image view can be drawn as a square or circle out of the box. You can even sepcify a mask image if you want a custom shape. These settings are done in an `AvatarImageViewConfiguration`. Here are some examples for initials being drawn in different shapes.
 
@@ -34,9 +50,9 @@ It works great with custom fonts!
 
 ####Gotchas
 
-1) Always set the `configuration` before the `dataSource`. If you don't, you will need to manually call `refresh()` to render the view correctly.
+1. Always set the `configuration` before the `dataSource`. If you don't, you will need to manually call `refresh()` to render the view correctly.
 
-2) When implementing the `AvatarImageViewDataSource` and `AvatarImageViewConfiguration` protocols, you will need to explicitly define the type for any protocol member that is an optional otherwise Swift goes insane.
+2. When implementing the `AvatarImageViewDataSource` and `AvatarImageViewConfiguration` protocols, you will need to explicitly define the type for any protocol member that is an optional otherwise Swift goes insane.
 
 For example, `AvatarImageViewConfiguration` has a type called `var fontName: String?` that returns `nil` by default. To implement this in a `struct`, define it as follows:
 
