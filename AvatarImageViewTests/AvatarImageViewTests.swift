@@ -219,4 +219,26 @@ class AvatarImageViewTests: XCTestCase {
         XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
     }
 
+    // MARK:- Test To Check Randomly Generated Color Is Constant For Unique Users
+    
+    func testRandomColorForUser() {
+        let dataOne = TestData(name: "John Appleseed")
+        let configOne = TestConfig()
+        
+        let dataTwo = TestData(name: "John Appleseed")
+        let configTwo = TestConfig()
+        
+        let avatarImageViewOne = AvatarImageView(frame: imageRect)
+        avatarImageViewOne.configuration = configOne
+        avatarImageViewOne.dataSource = dataOne
+        
+        let avatarImageViewTwo = AvatarImageView(frame: imageRect)
+        avatarImageViewTwo.configuration = configTwo
+        avatarImageViewTwo.dataSource = dataTwo
+        
+        let imageDataOne = UIImagePNGRepresentation(avatarImageViewOne.asImage())!
+        let imageDataTwo = UIImagePNGRepresentation(avatarImageViewTwo.asImage())!
+        
+        XCTAssert(imageDataOne.isEqualToData(imageDataTwo), "The image data should match")
+    }
 }

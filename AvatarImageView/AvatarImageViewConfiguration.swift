@@ -27,6 +27,7 @@ public enum Shape {
  All the fields are optional as they have default implementations.
  */
 public protocol AvatarImageViewDataSource {
+    
     /// The user's name. This will be used to generate the initials.
     var name: String { get }
     
@@ -41,6 +42,11 @@ public protocol AvatarImageViewDataSource {
     
     /// If you prefer to specify your own initials, implement this field.
     var initials: String { get }
+    
+    /**
+     The hash value is used to ensure uniqueness of colors across users. This protocol does not inherit from `Hashable` due to the way Swift's type system work with `Equatable`.
+     */
+    var hashValue: Int { get }
 }
 
 /**
@@ -116,6 +122,13 @@ public extension AvatarImageViewDataSource {
             
             return initials.uppercaseString
             
+        }
+    }
+    
+    ///  returns the hash values of the name and initials combined with an XOR operator. This could be improved by adding something more unique like an email address to the hash.
+    var hashValue: Int {
+        get {
+            return name.hashValue ^ initials.hashValue
         }
     }
 }

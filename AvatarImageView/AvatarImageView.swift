@@ -12,6 +12,8 @@ import UIKit
  A subclass of `UIImageView` that is designed to show a user's profile picture. It will fall back to the user's initials if a picture is not supplied.
  An implementation of the `AvatarImageViewDataSource` must be supplied to populate the image view. Optionally, you can also set a configuration that conforms to `AvatarImageViewConfiguration`.
  
+ If the image falls back to the user's initials, a random background color will be generated unless one is specified in `AvatarImageViewDataSource` or `AvatarImageViewConfiguration`. The background color is assigned for each unique user. So if the same user's profile picture is shown in 2 different places in the app, the background color will be the same for that use in that session.
+ 
  Please see the docs for `AvatarImageViewDataSource` and `AvatarImageViewConfiguration` for further information.
  
  This library assumes that the view will be a square. There is no code to handle views where width != height and could lead to weird behaviour.
@@ -20,6 +22,8 @@ import UIKit
  */
 
 public class AvatarImageView: UIImageView {
+    
+    static var ColorMap: [Int : String] = [:]
     
     /// The data source to populate the Avatar Image
     public var dataSource: AvatarImageViewDataSource? {
@@ -96,7 +100,7 @@ public class AvatarImageView: UIImageView {
             bgColor = color.CGColor
         }
         else {
-            bgColor = randomColor()
+            bgColor = backgroundColorFor(hash: data.hashValue)
         }
         
         CGContextSetFillColorWithColor(context, bgColor)
@@ -146,14 +150,34 @@ public class AvatarImageView: UIImageView {
 
     // MARK:- Utilities
     
-    private func randomColor() -> CGColor {
+    private func backgroundColorFor(hash hash: Int) -> CGColor {
+        if let colorString = AvatarImageView.ColorMap[hash] {
+            let colors = colorString.componentsSeparatedByString("^")
+            
+            let red = CGFloat((colors[0] as NSString).doubleValue)
+            let green = CGFloat((colors[1] as NSString).doubleValue)
+            let blue = CGFloat((colors[2] as NSString).doubleValue)
+            
+            return UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
+        }
+        else {
+            let randomColorInfo = randomColor()
+            AvatarImageView.ColorMap[hash] = randomColorInfo.1
+            return randomColorInfo.0
+        }
+    }
+    
+    private func randomColor() -> (CGColor, String) {
         srand48(Int(arc4random()))
         
         let red = CGFloat(drand48())
         let green = CGFloat(drand48())
         let blue = CGFloat(drand48())
         
-        return UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
+        let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
+        let stringRepresentation = "\(red)^\(green)^\(blue)"
+        
+        return (color, stringRepresentation)
     }
     
     private func mask(layer layer: CALayer, withImage image: UIImage) {
