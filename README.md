@@ -8,7 +8,7 @@ This library was inspired by and is supposed to be a Swift rewrite of [bachonk/U
 
 To set up `AvatarImageView`, a `dataSource` that conforms to `AvatarImageViewDataSource` needs to be set. Optionally a `configuration` that conforms to `AvatarImageViewConfiguration` can also be set. The default configuration will show a square picture; and if no profile picture is supplied, it will draw the initials with the system font on a random background color.
 
-The `AvatarImageViewDataSource` contains the follwing members. All have default implementations and are hence optional.
+The `AvatarImageViewDataSource` contains the following members. All have default implementations and are hence optional.
 
 * `var name: String { get }` - Default: returns `""`
 * `var avatar: UIImage? { get }` - Default: returns `nil`
