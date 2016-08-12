@@ -12,23 +12,23 @@ The random background colour is held in memory for each unique user, so if you h
 
 The image view can be drawn as a square or circle out of the box. You can even sepcify a mask image if you want a custom shape. These settings are done in an `AvatarImageViewConfiguration`. Here are some examples for initials being drawn in different shapes.
 
-![Square Initials](./Screenshots/square_initials.png =200x)
-![Circle Initials](./Screenshots/circle_initials.png =200x)
-![Mask Initials](./Screenshots/mask_initials.png =200x)
+![Square Initials](./Screenshots/square_initials.png)
+![Circle Initials](./Screenshots/circle_initials.png)
+![Mask Initials](./Screenshots/mask_initials.png)
 
 <br /><br />
 Here's an example of when the `dataSource` supplies a profile picture and the `configuration` is set to a circle.
 
-![Circle Profile Pic](./Screenshots/circle_profile_pic.png =200x)
+![Circle Profile Pic](./Screenshots/circle_profile_pic.png)
 
 <br /><br />
 It works great with custom fonts!
 
-![Custom Font](./Screenshots/circle_custom_font.png =200x)
+![Custom Font](./Screenshots/circle_custom_font.png)
 
 ...and also with `UITableView`s
 
-![Table View Pics](./Screenshots/table_view.png =200x)
+![Table View Pics](./Screenshots/table_view.png)
 
 ####Gotchas
 
