@@ -14,6 +14,7 @@
 		294E36FC1D5E0B72002230DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294E36FA1D5E0B72002230DF /* LaunchScreen.storyboard */; };
 		294E37041D5E0D20002230DF /* AvatarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E37031D5E0D20002230DF /* AvatarTableViewController.swift */; };
 		294E370A1D5E0E9F002230DF /* AvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E37091D5E0E9F002230DF /* AvatarTableViewCell.swift */; };
+		294E370D1D5E100E002230DF /* AvatarImageExampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E370C1D5E100E002230DF /* AvatarImageExampleData.swift */; };
 		4F64CD04ABE743694C9A6D85 /* Pods_AvatarImageViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601C06695C9C0A87C518D6A6 /* Pods_AvatarImageViewExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		294E36FD1D5E0B72002230DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		294E37031D5E0D20002230DF /* AvatarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarTableViewController.swift; sourceTree = "<group>"; };
 		294E37091D5E0E9F002230DF /* AvatarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarTableViewCell.swift; sourceTree = "<group>"; };
+		294E370C1D5E100E002230DF /* AvatarImageExampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageExampleData.swift; sourceTree = "<group>"; };
 		601C06695C9C0A87C518D6A6 /* Pods_AvatarImageViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvatarImageViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E27C0CD899AC57A65A4FAD /* Pods-AvatarImageViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvatarImageViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvatarImageViewExample/Pods-AvatarImageViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		E2605A1B99248F682F77F80A /* Pods-AvatarImageViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvatarImageViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvatarImageViewExample/Pods-AvatarImageViewExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			children = (
 				294E36F11D5E0B72002230DF /* AppDelegate.swift */,
 				294E36FD1D5E0B72002230DF /* Info.plist */,
+				294E370B1D5E0FEE002230DF /* Model */,
 				294E37051D5E0E5C002230DF /* View Controllers */,
 				294E37081D5E0E86002230DF /* Views */,
 				294E37061D5E0E68002230DF /* Storyboards */,
@@ -107,6 +110,14 @@
 				294E37091D5E0E9F002230DF /* AvatarTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		294E370B1D5E0FEE002230DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				294E370C1D5E100E002230DF /* AvatarImageExampleData.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BA8BE3A8F9D5D5DB5744FA57 /* Frameworks */ = {
@@ -248,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294E370D1D5E100E002230DF /* AvatarImageExampleData.swift in Sources */,
 				294E37041D5E0D20002230DF /* AvatarTableViewController.swift in Sources */,
 				294E36F41D5E0B72002230DF /* SingleAvatarViewController.swift in Sources */,
 				294E370A1D5E0E9F002230DF /* AvatarTableViewCell.swift in Sources */,
