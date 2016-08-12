@@ -43,4 +43,21 @@ class AvatarImageViewTests: XCTestCase {
         XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
         XCTAssert(avatarImageView.layer.cornerRadius == avatarImageView.bounds.width/2 ,"The corner radius should be half the width")
     }
+    
+    func testMaskImageWithConfiguredAvatar() {
+        var data = TestData(name: "John Appleseed")
+        data.avatar = UIImage(namedInTest: "profile_pic")!
+        
+        var config = TestConfig()
+        config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
+        
+        let avatarImageView = AvatarImageView(frame: imageRect)
+        avatarImageView.configuration = config
+        avatarImageView.dataSource = data
+        
+        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
+        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "profile_pic_hexagon")!)!
+        
+        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+    }
 }
