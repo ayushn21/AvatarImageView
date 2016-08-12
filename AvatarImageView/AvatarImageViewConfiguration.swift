@@ -8,85 +8,161 @@
 
 import UIKit
 
-public protocol AvatarImageViewDataSource {
-    var name: String { get }
+/// Used to specify the shape of the image of the user's profile picture.
+public enum Shape {
+    /** 
+     This will set the corner radius to half the width if the view is supplied with an image. <br />
+     If no image is supplied and the view draws initials, the resulting image will be clipped to a circle using a `CGPath`.
+     */
+    case Circle
+    /// This will leave the view's corner radius untouched and will not perform any clipping.
+    case Square
     
-    // Optional
-    var avatar: UIImage? { get }
-    var bgColor: UIColor? { get }
-    var initials: String { get }
+    /// Specify a custom shape using a mask image. Please ensure this image is of equal height and width.
+    case Mask(image: UIImage)
 }
 
+/**
+ This protocol supplies data to the AvatarImageView. Ideally you should add this protocol to your model and just pass that in.<br />
+ All the fields are optional as they have default implementations.
+ */
+public protocol AvatarImageViewDataSource {
+    
+    /// The user's name. This will be used to generate the initials.
+    var name: String { get }
+    
+    /// The user's profile picture. If this is nil, the user's initials will be set.
+    var avatar: UIImage? { get }
+    
+    /**
+     The background color for the initials. This value DOES NOT set the background color of the image view.<br />
+     If this is nil, the configuration's `bgColor` will be used. If that is also nil, a random color will be generated.
+     */
+    var bgColor: UIColor? { get }
+    
+    /// If you prefer to specify your own initials, implement this field.
+    var initials: String { get }
+    
+    /**
+     This is a hash used to ensure uniqueness of colors across users. This protocol does not inherit from `Hashable` due to the way Swift's type system work with `Equatable`.
+     */
+    var avatarId: Int { get }
+}
+
+/**
+ A protocol to specify the configuration of the `AvatarImageView`. A struct called `DefaultConfiguration` is provided and set on the `AvatarImageView` by default.
+ */
 public protocol AvatarImageViewConfiguration {
-    // Optional
+    /// The shape of the Avatar image.
     var shape: Shape { get }
+    
+    /// The height of the view is multiplied by this factor to get the size the text will be drawn at.
     var textSizeFactor: CGFloat { get }
+    
+    /// The name of the font to be used to draw text. If this is nil, the system font will be used.
     var fontName: String? { get }
+    
+    /** 
+     The background color for the initials. This value DOES NOT set the background color of the image view.<br />
+     The color specified in the `AvatarImageViewDataSource` takes precedence over this. If this and the data source's `bgColor` are nil, a random color will be generated.
+     */
+    var bgColor: UIColor? { get }
+    
+    /// The color of the text.
     var textColor: UIColor { get }
 }
 
+/// Default implementation of `AvatarImageViewDataSource`
 public extension AvatarImageViewDataSource {
+    /// returns `""`
+    var name: String {
+        get {
+            return ""
+        }
+    }
     
+    /// returns `nil`
     var avatar: UIImage? {
         get {
             return nil
         }
     }
     
+    /// returns `nil`
     var bgColor: UIColor? {
         get {
             return nil
         }
     }
     
+    /**
+     The first letter of the first and last words of the `name` field is capitalised and returned. Eg. `John Appleseed` will return `JA`.<br />
+     If the length of the String returned by `name` is not greater than 0, it will return ``
+     */
     var initials: String {
         get {
             guard name.characters.count > 0 else {
-                return ""
+                return ""
             }
             
             var nameArray = name.componentsSeparatedByString(" ")
             
-            if nameArray.count > 2 {
-                nameArray = Array(nameArray.prefix(2))
+            if let firstName = nameArray.first,
+                let lastName = nameArray.last
+                where nameArray.count > 2 {
+                nameArray = [firstName, lastName]
             }
             
             var initials = ""
             nameArray.forEach { element in
-                guard let firstLetter = element.characters.first else {
-                    return
+                if let firstLetter = element.characters.first {
+                    initials.append(firstLetter)
                 }
-                
-                initials.append(firstLetter)
             }
             
-            return initials
+            return initials.uppercaseString
             
+        }
+    }
+    
+    ///  returns the hash values of the name and initials combined with an XOR operator. This could be improved by adding something more unique like an email address to the hash.
+    var avatarId: Int {
+        get {
+            return name.hashValue ^ initials.hashValue
         }
     }
 }
 
 public extension AvatarImageViewConfiguration {
-    
+    /// returns `.Square`
     var shape: Shape {
         get {
             return .Square
         }
     }
     
-    
+    /// returns `0.5`
     var textSizeFactor: CGFloat {
         get {
             return 0.5
         }
     }
     
+    /// returns `nil`
     var fontName: String? {
         get {
             return nil
         }
     }
     
+    /// returns `nil`
+    var bgColor: UIColor? {
+        get {
+            return nil
+        }
+    }
+    
+    /// returns `UIColor.white()`
     var textColor: UIColor {
         get {
             return UIColor.whiteColor()
@@ -94,4 +170,5 @@ public extension AvatarImageViewConfiguration {
     }
 }
 
+/// An implementation of `AvatarImageViewConfiguration` with default values.
 struct DefaultConfiguration: AvatarImageViewConfiguration {}
