@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name              = "AvatarImageView"
   s.version           = "1.0.0"
-  s.summary           = "AvatarImageView is a simple and extensimple UIImageView subclass to display users' avatars"
+  s.summary           = "AvatarImageView is a simple and extensible UIImageView subclass to display users' avatars"
   s.author            = { "Ayush Newatia" => "ayush.newatia@icloud.com" }
   s.platform          = :ios, '8.0'
   s.homepage          = "https://github.com/ayushn21/AvatarImageView"
