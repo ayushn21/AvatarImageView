@@ -48,6 +48,10 @@ It works great with custom fonts!
 
 ![Table View Pics](./Screenshots/table_view.png)
 
+####Example Project
+
+Please refer to the example project in this repository for an implementation of all the above use cases. If you find any bugs, open a GitHub issue!
+
 ####Gotchas
 
 1. Always set the `configuration` before the `dataSource`. If you don't, you will need to manually call `refresh()` to render the view correctly.
@@ -66,10 +70,6 @@ Defining it as:
             var fontName = "Futura-Medium"        
 	}
 ... will not work :(
-
-####Example Project
-
-Please refer to the example project in this repository for an implementation of all the above use cases. If you find any bugs, open a GitHub issue!
 
 ## Documentation
 
