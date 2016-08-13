@@ -1,5 +1,3 @@
-env:
-  SIMULATOR=iPhone 6 Plus
 language: objective-c
 osx_image: xcode7.3
 xcode_project: AvatarImageView.xcodeproj
