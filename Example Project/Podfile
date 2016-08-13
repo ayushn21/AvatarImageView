@@ -3,6 +3,6 @@ use_frameworks!
 
 target 'AvatarImageViewExample' do
 
-  pod 'AvatarImageView', :path => '/Users/ayush.newatia/Developer/Personal/iOS/Libraries/AvatarImageView'
+  pod 'AvatarImageView'
 
 end

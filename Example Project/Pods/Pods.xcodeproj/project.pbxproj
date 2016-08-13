@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1716B0814951CDAB789ED57BFA94B7F7 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD870EB896624DFEA1FE60E768C504 /* AvatarImageView.swift */; };
-		3553564A42A09808DAF591E10E621C6C /* AvatarImageView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2EA23E2CF080BFAE08E7A5E75037A4 /* AvatarImageView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3553564A42A09808DAF591E10E621C6C /* AvatarImageView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06E29DDEF5DE0E8CEA02DDA3D48F7B1B /* AvatarImageView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		429B84A903CCDBD945EFA4ECF4414F0A /* AvatarImageViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D666074256CE83B48083EA4732AB788 /* AvatarImageViewConfiguration.swift */; };
 		5202F149B7E2AB7301983177C233A678 /* Pods-AvatarImageViewExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AC759D0BB293417A34020394C403799 /* Pods-AvatarImageViewExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6612A7BF676B6FCA2B42B2352E0D026C /* AvatarImageViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B054BA8D09A47AA2F7E1106E2EE6 /* AvatarImageViewConfiguration.swift */; };
-		6ACB49B0B89D94C303015C791E831B92 /* AvatarImageView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FD1558AF508B84D00AEDE871615EE /* AvatarImageView-dummy.m */; };
 		92B2D68462BC861D0E936FAB249B1FA4 /* Pods-AvatarImageViewExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF75E51739C600F9A70BD6BD152DED2A /* Pods-AvatarImageViewExample-dummy.m */; };
+		9AA8A809C34F2843EC246CF3DC8FF9F8 /* AvatarImageView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DE74DAD0872450B6CECC825BF38CB1 /* AvatarImageView-dummy.m */; };
 		ABF462324BD1DA46A351A928BA26F322 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		F2364E3C0D6A880CFDFAD802AF182CB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		F8358E756D19AD671D6F0EEAB757B084 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B7EE8932B83D287BDD8B7ECA6007D /* AvatarImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,27 +28,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0670F89FE51F8EEB55B1F7380BBE7542 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06E29DDEF5DE0E8CEA02DDA3D48F7B1B /* AvatarImageView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AvatarImageView-umbrella.h"; sourceTree = "<group>"; };
+		0D666074256CE83B48083EA4732AB788 /* AvatarImageViewConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AvatarImageViewConfiguration.swift; path = AvatarImageView/AvatarImageViewConfiguration.swift; sourceTree = "<group>"; };
 		1D074CF6F320F4009C977B3FDF175BD1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		372B71B87CCF9EF5DDF7A2A7065F7655 /* AvatarImageView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AvatarImageView-prefix.pch"; sourceTree = "<group>"; };
 		3B3E9EB878F6244CCBE0897EA0A1BC50 /* Pods-AvatarImageViewExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AvatarImageViewExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3EF3C6CFC938123E8DADB071F0907FB8 /* Pods-AvatarImageViewExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AvatarImageViewExample-resources.sh"; sourceTree = "<group>"; };
-		5E0FD1558AF508B84D00AEDE871615EE /* AvatarImageView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AvatarImageView-dummy.m"; sourceTree = "<group>"; };
+		53A2DF91B73081C3032CC3AB08F08439 /* AvatarImageView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AvatarImageView.xcconfig; sourceTree = "<group>"; };
 		604D4128E679529BD9D29E738284E274 /* Pods-AvatarImageViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AvatarImageViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		618B8FAC0CBE0AE440093659206F6310 /* Pods-AvatarImageViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AvatarImageViewExample.release.xcconfig"; sourceTree = "<group>"; };
+		624B7EE8932B83D287BDD8B7ECA6007D /* AvatarImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AvatarImageView.swift; path = AvatarImageView/AvatarImageView.swift; sourceTree = "<group>"; };
 		69B8D31D5DC75F583B7DC4CD907A11B8 /* Pods_AvatarImageViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvatarImageViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76A6501C7F29D71773BDF37285D0DB87 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AC759D0BB293417A34020394C403799 /* Pods-AvatarImageViewExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AvatarImageViewExample-umbrella.h"; sourceTree = "<group>"; };
 		8ADEE2A4E6B5EC547E6072D7708E18DE /* Pods-AvatarImageViewExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AvatarImageViewExample-frameworks.sh"; sourceTree = "<group>"; };
 		8E43CADC2896D5228E88651E6C6EEDDB /* Pods-AvatarImageViewExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AvatarImageViewExample.modulemap"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		ADD8B054BA8D09A47AA2F7E1106E2EE6 /* AvatarImageViewConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AvatarImageViewConfiguration.swift; sourceTree = "<group>"; };
-		C5FE9FAE60E02D7EA601317122D50206 /* AvatarImageView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AvatarImageView.xcconfig; sourceTree = "<group>"; };
+		98DE74DAD0872450B6CECC825BF38CB1 /* AvatarImageView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AvatarImageView-dummy.m"; sourceTree = "<group>"; };
 		C645D3ABF359790756DC637AC3A3CBDD /* Pods-AvatarImageViewExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AvatarImageViewExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D042D458BE335E67AA9618C6D015227C /* AvatarImageView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AvatarImageView.modulemap; sourceTree = "<group>"; };
-		DC2EA23E2CF080BFAE08E7A5E75037A4 /* AvatarImageView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AvatarImageView-umbrella.h"; sourceTree = "<group>"; };
+		D67E358921D2041516D9DE6AB7CD2DFC /* AvatarImageView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AvatarImageView.modulemap; sourceTree = "<group>"; };
 		DF75E51739C600F9A70BD6BD152DED2A /* Pods-AvatarImageViewExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AvatarImageViewExample-dummy.m"; sourceTree = "<group>"; };
-		E3BD870EB896624DFEA1FE60E768C504 /* AvatarImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
-		EB4744ADAB4F0F8EC7AB0058E9F852B3 /* AvatarImageView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AvatarImageView-prefix.pch"; sourceTree = "<group>"; };
 		F6A8C3C4350AFE6F820832B39D1E006B /* AvatarImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AvatarImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,29 +72,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03CC054C08EE1A4383FFC74A41B9108B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D67E358921D2041516D9DE6AB7CD2DFC /* AvatarImageView.modulemap */,
+				53A2DF91B73081C3032CC3AB08F08439 /* AvatarImageView.xcconfig */,
+				98DE74DAD0872450B6CECC825BF38CB1 /* AvatarImageView-dummy.m */,
+				372B71B87CCF9EF5DDF7A2A7065F7655 /* AvatarImageView-prefix.pch */,
+				06E29DDEF5DE0E8CEA02DDA3D48F7B1B /* AvatarImageView-umbrella.h */,
+				0670F89FE51F8EEB55B1F7380BBE7542 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AvatarImageView";
+			sourceTree = "<group>";
+		};
+		0DA571D52B56834309FFB5FC7EBD570A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38C2BEBE43948FD5977A7B3A64F75487 /* AvatarImageView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		38C2BEBE43948FD5977A7B3A64F75487 /* AvatarImageView */ = {
+			isa = PBXGroup;
+			children = (
+				624B7EE8932B83D287BDD8B7ECA6007D /* AvatarImageView.swift */,
+				0D666074256CE83B48083EA4732AB788 /* AvatarImageViewConfiguration.swift */,
+				03CC054C08EE1A4383FFC74A41B9108B /* Support Files */,
+			);
+			path = AvatarImageView;
+			sourceTree = "<group>";
+		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		65DD899714E4C8A0339C8302BDCA8CD1 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				86D96FB0511FC60B40249DD158D63BDA /* AvatarImageView */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		6E2A7D6518275142504E38441084371F /* AvatarImageView */ = {
-			isa = PBXGroup;
-			children = (
-				E3BD870EB896624DFEA1FE60E768C504 /* AvatarImageView.swift */,
-				ADD8B054BA8D09A47AA2F7E1106E2EE6 /* AvatarImageViewConfiguration.swift */,
-			);
-			path = AvatarImageView;
 			sourceTree = "<group>";
 		};
 		7136CA5D67B3105701AE493864366F5C /* Products */ = {
@@ -110,22 +125,12 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				65DD899714E4C8A0339C8302BDCA8CD1 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				0DA571D52B56834309FFB5FC7EBD570A /* Pods */,
 				7136CA5D67B3105701AE493864366F5C /* Products */,
 				EEC902119805A1A0F2354B8B5476FD75 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
-		};
-		86D96FB0511FC60B40249DD158D63BDA /* AvatarImageView */ = {
-			isa = PBXGroup;
-			children = (
-				6E2A7D6518275142504E38441084371F /* AvatarImageView */,
-				C4F639C6C7DC61DECF17AB11ECBD3E3E /* Support Files */,
-			);
-			name = AvatarImageView;
-			path = /Users/ayush.newatia/Developer/Personal/iOS/Libraries/AvatarImageView;
-			sourceTree = "<absolute>";
 		};
 		8AD09D4A1A0EA2C208898876F1EC7D8C /* Pods-AvatarImageViewExample */ = {
 			isa = PBXGroup;
@@ -151,20 +156,6 @@
 				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C4F639C6C7DC61DECF17AB11ECBD3E3E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D042D458BE335E67AA9618C6D015227C /* AvatarImageView.modulemap */,
-				C5FE9FAE60E02D7EA601317122D50206 /* AvatarImageView.xcconfig */,
-				5E0FD1558AF508B84D00AEDE871615EE /* AvatarImageView-dummy.m */,
-				EB4744ADAB4F0F8EC7AB0058E9F852B3 /* AvatarImageView-prefix.pch */,
-				DC2EA23E2CF080BFAE08E7A5E75037A4 /* AvatarImageView-umbrella.h */,
-				76A6501C7F29D71773BDF37285D0DB87 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example Project/Pods/Target Support Files/AvatarImageView";
 			sourceTree = "<group>";
 		};
 		EEC902119805A1A0F2354B8B5476FD75 /* Targets Support Files */ = {
@@ -219,7 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB073F7824B0F823DF698D9CB0608FC2 /* Build configuration list for PBXNativeTarget "AvatarImageView" */;
 			buildPhases = (
-				CDFC7D78B3B4AAE6657C22B633A49B82 /* Sources */,
+				B91D5780AEEB7297F4E57DD3A21B0D53 /* Sources */,
 				1CC92898DC52A733D4DC701EB1CF308E /* Frameworks */,
 				47CDC9CCF426B28955C39F958E8153C9 /* Headers */,
 			);
@@ -268,13 +259,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDFC7D78B3B4AAE6657C22B633A49B82 /* Sources */ = {
+		B91D5780AEEB7297F4E57DD3A21B0D53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ACB49B0B89D94C303015C791E831B92 /* AvatarImageView-dummy.m in Sources */,
-				1716B0814951CDAB789ED57BFA94B7F7 /* AvatarImageView.swift in Sources */,
-				6612A7BF676B6FCA2B42B2352E0D026C /* AvatarImageViewConfiguration.swift in Sources */,
+				9AA8A809C34F2843EC246CF3DC8FF9F8 /* AvatarImageView-dummy.m in Sources */,
+				F8358E756D19AD671D6F0EEAB757B084 /* AvatarImageView.swift in Sources */,
+				429B84A903CCDBD945EFA4ECF4414F0A /* AvatarImageViewConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +358,7 @@
 		};
 		8E5599855E680AA5AEA42D4C64676E7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5FE9FAE60E02D7EA601317122D50206 /* AvatarImageView.xcconfig */;
+			baseConfigurationReference = 53A2DF91B73081C3032CC3AB08F08439 /* AvatarImageView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -397,7 +388,7 @@
 		};
 		913F683968998362E2BB8F69D13A1ABC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5FE9FAE60E02D7EA601317122D50206 /* AvatarImageView.xcconfig */;
+			baseConfigurationReference = 53A2DF91B73081C3032CC3AB08F08439 /* AvatarImageView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

@@ -2,15 +2,11 @@ PODS:
   - AvatarImageView (1.0.0)
 
 DEPENDENCIES:
-  - AvatarImageView (from `/Users/ayush.newatia/Developer/Personal/iOS/Libraries/AvatarImageView`)
-
-EXTERNAL SOURCES:
-  AvatarImageView:
-    :path: /Users/ayush.newatia/Developer/Personal/iOS/Libraries/AvatarImageView
+  - AvatarImageView
 
 SPEC CHECKSUMS:
-  AvatarImageView: 1a0db358aed78b27facfc29cb5178d49316834da
+  AvatarImageView: d80660e7af1d2c33ca92323fbc1f6b40c6d81e50
 
-PODFILE CHECKSUM: 04f943bf573c7f236e8fd02fba9ca5f22d0923ae
+PODFILE CHECKSUM: db1fed1736b34674e9cb61cc5c7a55d7de9b8ef9
 
 COCOAPODS: 1.0.1
