@@ -4,6 +4,12 @@
 [![Swift Version](https://img.shields.io/badge/Language-Swift%202.2-orange.svg)](https://developer.apple.com/swift)
 <p>
 
+#### Build Status
+Develop: [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=develop)](https://travis-ci.org/ayushn21/AvatarImageView)
+
+Master: [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=master)](https://travis-ci.org/ayushn21/AvatarImageView)
+
+
 ## Description
 
 `AvatarImageView` is a customisable subclass of UIImageView that is designed to show users' profile pictures. It falls back to the user's initials with a random background color if no profile picture is supplied.
