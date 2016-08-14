@@ -31,7 +31,7 @@ class SaveImageUtility: XCTestCase {
 
 extension UIView {
     func asImage() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 3.0)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.mainScreen().scale)
         let context = UIGraphicsGetCurrentContext()!
         layer.renderInContext(context)
         let image = UIGraphicsGetImageFromCurrentImageContext()
