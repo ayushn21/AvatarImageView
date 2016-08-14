@@ -1,8 +1,15 @@
 language: objective-c
 osx_image: xcode7.3
-xcode_project: AvatarImageView.xcodeproj
-xcode_scheme: AvatarImageView
-xcode_sdk: iphonesimulator
+
+env:
+  global:
+  - PROJECT=AvatarImageView
+  - SCHEME=$PROJECT
+  matrix:
+    - DESTINATION="name=iPhone 6s"
+
+script: 
+  - xctool clean test -project "$PROJECT.xcodeproj" -scheme "$SCHEME" -sdk iphonesimulator -destination "$DESTINATION"
 
 branches:
   only:
