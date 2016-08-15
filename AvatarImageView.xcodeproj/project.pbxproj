@@ -17,6 +17,7 @@
 		2A0C2B3F1D5BAA98008027CA /* AvatarImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2B3E1D5BAA98008027CA /* AvatarImageViewTests.swift */; };
 		2A0C2B4B1D5BAABD008027CA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2B491D5BAABD008027CA /* AvatarImageView.swift */; };
 		2A0C2B4C1D5BAABD008027CA /* AvatarImageViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2B4A1D5BAABD008027CA /* AvatarImageViewConfiguration.swift */; };
+		2A60884C1D6230AA0061EE0E /* ColorCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A60884B1D6230AA0061EE0E /* ColorCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		2A0C2B401D5BAA98008027CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A0C2B491D5BAABD008027CA /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		2A0C2B4A1D5BAABD008027CA /* AvatarImageViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageViewConfiguration.swift; sourceTree = "<group>"; };
+		2A60884B1D6230AA0061EE0E /* ColorCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				2A0C2B491D5BAABD008027CA /* AvatarImageView.swift */,
 				2A0C2B4A1D5BAABD008027CA /* AvatarImageViewConfiguration.swift */,
+				2A60884B1D6230AA0061EE0E /* ColorCache.swift */,
 				2A0C2B321D5BAA98008027CA /* AvatarImageView.h */,
 				2A0C2B341D5BAA98008027CA /* Info.plist */,
 			);
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A0C2B4C1D5BAABD008027CA /* AvatarImageViewConfiguration.swift in Sources */,
+				2A60884C1D6230AA0061EE0E /* ColorCache.swift in Sources */,
 				2A0C2B4B1D5BAABD008027CA /* AvatarImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,9 @@ import UIKit
 
 public class AvatarImageView: UIImageView {
     
-    static var colorMap: [Int : String] = [:]
+    static let colorCache = ColorCache<NSString>()
+    lazy var notificationCenter = NSNotificationCenter.defaultCenter()
+    lazy var application = UIApplication.sharedApplication()
     
     /// The data source to populate the Avatar Image
     public var dataSource: AvatarImageViewDataSource? {
@@ -58,6 +60,10 @@ public class AvatarImageView: UIImageView {
     func setup() {
         backgroundColor = UIColor.clearColor()
         image = nil
+        notificationCenter.addObserver(self,
+                                       selector: #selector(clearCache),
+                                       name: UIApplicationDidReceiveMemoryWarningNotification,
+                                       object: application)
     }
     
     func textAttributesFrom(data data: AvatarImageViewDataSource) -> [String : AnyObject] {
@@ -151,7 +157,7 @@ public class AvatarImageView: UIImageView {
     // MARK:- Utilities
     
     private func backgroundColorFor(hash hash: Int) -> CGColor {
-        if let colorString = AvatarImageView.colorMap[hash] {
+        if let colorString = AvatarImageView.colorCache[hash] {
             let colors = colorString.componentsSeparatedByString("^")
             
             let red = CGFloat((colors[0] as NSString).doubleValue)
@@ -161,23 +167,22 @@ public class AvatarImageView: UIImageView {
             return UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
         }
         else {
-            let randomColorInfo = randomColor()
-            AvatarImageView.colorMap[hash] = randomColorInfo.1
-            return randomColorInfo.0
+            srand48(hash)
+            
+            let red = CGFloat(drand48())
+            let green = CGFloat(drand48())
+            let blue = CGFloat(drand48())
+            
+            let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
+            let stringRepresentation = "\(red)^\(green)^\(blue)"
+            
+            AvatarImageView.colorCache[hash] = stringRepresentation
+            return color
         }
     }
     
-    private func randomColor() -> (CGColor, String) {
-        srand48(Int(arc4random()))
-        
-        let red = CGFloat(drand48())
-        let green = CGFloat(drand48())
-        let blue = CGFloat(drand48())
-        
-        let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
-        let stringRepresentation = "\(red)^\(green)^\(blue)"
-        
-        return (color, stringRepresentation)
+    @objc private func clearCache() {
+        AvatarImageView.colorCache.clear()
     }
     
     private func mask(layer layer: CALayer, withImage image: UIImage) {
