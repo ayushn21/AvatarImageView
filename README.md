@@ -76,15 +76,20 @@ Please refer to the example project in this repository for an implementation of 
 
 For example, `AvatarImageViewConfiguration` has a type called `var fontName: String?` that returns `nil` by default. To implement this in a `struct`, define it as follows:
 
-	struct Config: AvatarImageViewConfiguration {
-            var fontName: String? = "Futura-Medium"        
-	}
+```swift
+struct Config: AvatarImageViewConfiguration {
+    var fontName: String? = "Futura-Medium"        
+}
+```
 	
 Defining it as:
 
-	struct Config: AvatarImageViewConfiguration {
-            var fontName = "Futura-Medium"        
-	}
+```swift
+struct Config: AvatarImageViewConfiguration {
+    var fontName = "Futura-Medium"
+}
+```
+
 ... will not work :(
 
 ## Documentation
