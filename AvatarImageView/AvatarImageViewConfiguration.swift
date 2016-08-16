@@ -165,7 +165,7 @@ public extension AvatarImageViewConfiguration {
     /// returns `UIColor.white()`
     var textColor: UIColor {
         get {
-            return UIColor.whiteColor()
+            return .whiteColor()
         }
     }
 }

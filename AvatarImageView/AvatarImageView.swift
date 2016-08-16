@@ -56,7 +56,7 @@ public class AvatarImageView: UIImageView {
     }
     
     func setup() {
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = .clearColor()
         image = nil
     }
     

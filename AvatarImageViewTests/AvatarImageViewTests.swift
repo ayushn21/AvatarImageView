@@ -70,7 +70,7 @@ class AvatarImageViewTests: XCTestCase {
     
     func testInitialsSquareImageWithBgColorConfiguredInDataSource() {
         var data = TestData(name: "John Appleseed")
-        data.bgColor = UIColor.blueColor()
+        data.bgColor = .blueColor()
         
         var config = TestConfig()
         config.shape = .Square
@@ -87,7 +87,7 @@ class AvatarImageViewTests: XCTestCase {
     
     func testInitialsRoundImageWithBgColorConfiguredInDataSource() {
         var data = TestData(name: "John Appleseed")
-        data.bgColor = UIColor.blueColor()
+        data.bgColor = .blueColor()
         
         var config = TestConfig()
         config.shape = .Circle
@@ -104,7 +104,7 @@ class AvatarImageViewTests: XCTestCase {
     
     func testInitialsMaskImageWithBgColorConfiguredInDataSource() {
         var data = TestData(name: "John Appleseed")
-        data.bgColor = UIColor.blueColor()
+        data.bgColor = .blueColor()
         
         var config = TestConfig()
         config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
