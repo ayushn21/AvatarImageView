@@ -1,11 +1,11 @@
 PODS:
-  - AvatarImageView (1.0.0)
+  - AvatarImageView (1.1.0)
 
 DEPENDENCIES:
   - AvatarImageView
 
 SPEC CHECKSUMS:
-  AvatarImageView: d80660e7af1d2c33ca92323fbc1f6b40c6d81e50
+  AvatarImageView: 54038ab50a9645125cdec2b7c25816208a47fcfa
 
 PODFILE CHECKSUM: db1fed1736b34674e9cb61cc5c7a55d7de9b8ef9
 
