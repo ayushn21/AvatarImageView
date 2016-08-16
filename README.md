@@ -28,17 +28,17 @@ The `AvatarImageViewDataSource` contains the following members. All have default
 * `var initials: String { get }` - Default: returns initials calculated from the name.
 * `var avatarId: Int { get }` - Default: returns the hash values of the name and initials combined using XOR.
 
-The `AvatarImageViewConfiguration` contains the follwing members. All have default implementations and are hence optional.
+The `AvatarImageViewConfiguration` contains the following members. All have default implementations and are hence optional.
 
 * `var shape: Shape { get }` - Default: returns `.Square`
 * `var textSizeFactor: CGFloat { get }` - Default: returns `0.5`
 * `var fontName: String? { get }` - Default: returns `nil` 
 * `var bgColor: UIColor? { get }` - Default: returns in`nil`. The `bgColor` in `AvatarImageViewDataSource` will take precedence over this one.
-* `var textColor: UIColor { get }` - Default: returns `UIColor.white()`.
+* `var textColor: UIColor { get }` - Default: returns `.white()`.
 
 Check out the [docs](http://cocoadocs.org/docsets/AvatarImageView/) for more information.
 
-The random background colour is held in memory for each unique user, so if you have `AvatarImageView`s in different parts of your app, the background color for a particular user will be the same in both in the same session. I'm working on persisting this store so the color is consistent across all sessions.
+The random background colour is generated for each unique user from its `avatarId`, so if you have `AvatarImageView`s in different parts of your app, the background color for a particular user will be the same in both.
 
 The image view can be drawn as a square or circle out of the box. You can even sepcify a mask image if you want a custom shape. These settings are done in an `AvatarImageViewConfiguration`. Here are some examples for initials being drawn in different shapes.
 
@@ -110,8 +110,14 @@ it, simply add the following lines to your Podfile:
     
 ## Release Notes
 
+####1.1.0
+Improved the random color generator. It now generates a hash from the initials and name, and then uses that as the seed to generate the random color, so it's always the same for each unique user.
+
 ####1.0.0
 Initial Release
+
+## Swift 3
+Swift 3 support will be added on a feature branch soon, and merged into master when iOS 10 is released.
 
 ## Author
 

@@ -12,7 +12,7 @@ import UIKit
  A subclass of `UIImageView` that is designed to show a user's profile picture. It will fall back to the user's initials if a picture is not supplied.
  An implementation of the `AvatarImageViewDataSource` must be supplied to populate the image view. Optionally, you can also set a configuration that conforms to `AvatarImageViewConfiguration`.
  
- If the image falls back to the user's initials, a random background color will be generated unless one is specified in `AvatarImageViewDataSource` or `AvatarImageViewConfiguration`. The background color is assigned for each unique user. So if the same user's profile picture is shown in 2 different places in the app, the background color will be the same for that use in that session.
+ If the image falls back to the user's initials, a random background color will be generated unless one is specified in `AvatarImageViewDataSource` or `AvatarImageViewConfiguration`. The background color is generated for each unique user from its `avatarId`. So if the same user's profile picture is shown in 2 different places in the app, the background color will be the same.
  
  Please see the docs for `AvatarImageViewDataSource` and `AvatarImageViewConfiguration` for further information.
  
