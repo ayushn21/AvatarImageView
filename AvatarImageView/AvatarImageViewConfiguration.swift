@@ -44,7 +44,7 @@ public protocol AvatarImageViewDataSource {
     var initials: String { get }
     
     /**
-     This is a hash used to ensure uniqueness of colors across users. This protocol does not inherit from `Hashable` due to the way Swift's type system work with `Equatable`.
+     This is a hash used to ensure uniqueness of colors across users. It is used as the seed to generate the random color ensure it's always the same for each unique user. This protocol does not inherit from `Hashable` due to the way Swift's type system work with `Equatable`.
      */
     var avatarId: Int { get }
 }
@@ -125,7 +125,7 @@ public extension AvatarImageViewDataSource {
         }
     }
     
-    ///  returns the hash values of the name and initials combined with an XOR operator. This could be improved by adding something more unique like an email address to the hash.
+    ///  returns the hash values of the name and initials combined with an XOR operator. This should ideally be improved by adding something more unique like an email address to the hash.
     var avatarId: Int {
         get {
             return name.hashValue ^ initials.hashValue
@@ -165,7 +165,7 @@ public extension AvatarImageViewConfiguration {
     /// returns `UIColor.white()`
     var textColor: UIColor {
         get {
-            return UIColor.whiteColor()
+            return .whiteColor()
         }
     }
 }
