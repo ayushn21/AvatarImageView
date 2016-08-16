@@ -24,9 +24,7 @@ import UIKit
 public class AvatarImageView: UIImageView {
     
     static let colorCache = ColorCache<NSString>()
-    lazy var notificationCenter = NSNotificationCenter.defaultCenter()
-    lazy var application = UIApplication.sharedApplication()
-    
+
     /// The data source to populate the Avatar Image
     public var dataSource: AvatarImageViewDataSource? {
         didSet {
@@ -60,10 +58,6 @@ public class AvatarImageView: UIImageView {
     func setup() {
         backgroundColor = UIColor.clearColor()
         image = nil
-        notificationCenter.addObserver(self,
-                                       selector: #selector(clearCache),
-                                       name: UIApplicationDidReceiveMemoryWarningNotification,
-                                       object: application)
     }
     
     func textAttributesFrom(data data: AvatarImageViewDataSource) -> [String : AnyObject] {
@@ -179,10 +173,6 @@ public class AvatarImageView: UIImageView {
             AvatarImageView.colorCache[hash] = stringRepresentation
             return color
         }
-    }
-    
-    @objc private func clearCache() {
-        AvatarImageView.colorCache.clear()
     }
     
     private func mask(layer layer: CALayer, withImage image: UIImage) {

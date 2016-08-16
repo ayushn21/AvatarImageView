@@ -12,6 +12,20 @@ final class ColorCache<ValueType: AnyObject> {
     
     private let cache = NSCache()
     
+    lazy var notificationCenter = NSNotificationCenter.defaultCenter()
+    lazy var application = UIApplication.sharedApplication()
+    
+    init() {
+        notificationCenter.addObserver(self,
+                                       selector: #selector(clear),
+                                       name: UIApplicationDidReceiveMemoryWarningNotification,
+                                       object: application)
+    }
+    
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
+    
     subscript(key: Int) -> ValueType? {
         get {
             return cache.objectForKey(key) as? ValueType
@@ -26,7 +40,7 @@ final class ColorCache<ValueType: AnyObject> {
         }
     }
     
-    func clear() {
+    @objc func clear() {
         cache.removeAllObjects()
     }
 }
