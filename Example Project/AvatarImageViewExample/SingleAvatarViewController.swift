@@ -19,6 +19,18 @@ class SingleAvatarViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        addViewProgramatically()
+    }
+    
+    func addViewProgramatically() {
+        struct DataSource: AvatarImageViewDataSource {}
+        let avatarImageView = AvatarImageView(frame: CGRectMake(0, 0, 100, 100))
+        avatarImageView.dataSource = DataSource()
+        view.addSubview(avatarImageView)
+    }
+    
     func configureRoundAvatar() {
         struct Config: AvatarImageViewConfiguration { var shape: Shape = .Circle }
         avatarImageView.configuration = Config()

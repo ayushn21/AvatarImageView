@@ -110,6 +110,9 @@ it, simply add the following lines to your Podfile:
     
 ## Release Notes
 
+####1.1.1
+Modified `init(frame:)` to be public.
+
 ####1.1.0
 Improved the random color generator. It now generates a hash from the initials and name, and then uses that as the seed to generate the random color, so it's always the same for each unique user.
 
