@@ -10,9 +10,9 @@ import UIKit
 
 extension UIView {
     func asImage() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.mainScreen().scale)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
         let context = UIGraphicsGetCurrentContext()!
-        layer.renderInContext(context)
+        layer.render(in: context)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image!
@@ -22,10 +22,10 @@ extension UIView {
 extension UIImage {
     func saveToDesktop(withName name: String = "image.png") {
         let imageData = UIImagePNGRepresentation(self)
-        let simluatorDesktopPath = NSSearchPathForDirectoriesInDomains(.DesktopDirectory, .UserDomainMask, true).first!
-        let splitPath = simluatorDesktopPath.componentsSeparatedByString("/")
+        let simluatorDesktopPath = NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true).first!
+        let splitPath = simluatorDesktopPath.components(separatedBy: "/")
         let path = "/\(splitPath[1])/\(splitPath[2])/Desktop/\(name)"
         
-        NSFileManager.defaultManager().createFileAtPath(path, contents: imageData, attributes: nil)
+        FileManager.default.createFile(atPath: path, contents: imageData, attributes: nil)
     }
 }

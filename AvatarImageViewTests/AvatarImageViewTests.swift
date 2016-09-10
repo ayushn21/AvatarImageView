@@ -11,7 +11,7 @@ import XCTest
 
 class AvatarImageViewTests: XCTestCase {
     
-    let imageRect = CGRectMake(0, 0, 100, 100)
+    let imageRect = CGRect(x: 0, y: 0, width: 100, height: 100)
     
     // MARK:- Avatar Tests
     
@@ -20,7 +20,7 @@ class AvatarImageViewTests: XCTestCase {
         data.avatar = UIImage(namedInTest: "profile_pic")!
         
         var config = TestConfig()
-        config.shape = .Square
+        config.shape = .square
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.dataSource = data
@@ -28,7 +28,7 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "profile_pic")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testRoundImageWithConfiguredAvatar() {
@@ -36,7 +36,7 @@ class AvatarImageViewTests: XCTestCase {
         data.avatar = UIImage(namedInTest: "profile_pic")!
         
         var config = TestConfig()
-        config.shape = .Circle
+        config.shape = .circle
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -45,7 +45,7 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "profile_pic")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
         XCTAssert(avatarImageView.layer.cornerRadius == avatarImageView.bounds.width/2 ,"The corner radius should be half the width")
     }
     
@@ -54,7 +54,7 @@ class AvatarImageViewTests: XCTestCase {
         data.avatar = UIImage(namedInTest: "profile_pic")!
         
         var config = TestConfig()
-        config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
+        config.shape = .mask(image: UIImage(namedInTest: "hexagon")!)
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -63,17 +63,17 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "profile_pic_hexagon")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     // MARK:- Initials Tests With BgColor Set In Data Source
     
     func testInitialsSquareImageWithBgColorConfiguredInDataSource() {
         var data = TestData(name: "John Appleseed")
-        data.bgColor = .blueColor()
+        data.bgColor = .blue
         
         var config = TestConfig()
-        config.shape = .Square
+        config.shape = .square
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -82,15 +82,15 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_square_blue")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testInitialsRoundImageWithBgColorConfiguredInDataSource() {
         var data = TestData(name: "John Appleseed")
-        data.bgColor = .blueColor()
+        data.bgColor = .blue
         
         var config = TestConfig()
-        config.shape = .Circle
+        config.shape = .circle
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -99,15 +99,15 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_circle_blue")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testInitialsMaskImageWithBgColorConfiguredInDataSource() {
         var data = TestData(name: "John Appleseed")
-        data.bgColor = .blueColor()
+        data.bgColor = .blue
         
         var config = TestConfig()
-        config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
+        config.shape = .mask(image: UIImage(namedInTest: "hexagon")!)
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -116,7 +116,7 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_mask_blue")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     // MARK:- Initials Tests With BgColor Set In Configuration
@@ -125,7 +125,7 @@ class AvatarImageViewTests: XCTestCase {
         let data = TestData(name: "John Appleseed")
         
         var config = TestConfig()
-        config.shape = .Square
+        config.shape = .square
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -134,14 +134,14 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_square")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testInitialsRoundImageWithBgColorConfiguredInConfiguration() {
         let data = TestData(name: "John Appleseed")
         
         var config = TestConfig()
-        config.shape = .Circle
+        config.shape = .circle
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -150,14 +150,14 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_circle")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testInitialsMaskImageWithBgColorConfiguredInConfiguration() {
         let data = TestData(name: "John Appleseed")
         
         var config = TestConfig()
-        config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
+        config.shape = .mask(image: UIImage(namedInTest: "hexagon")!)
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -166,7 +166,7 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_mask")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
 
     // MARK:- No Initials Configured Tests
@@ -175,7 +175,7 @@ class AvatarImageViewTests: XCTestCase {
         let data = TestData(name: "")
         
         var config = TestConfig()
-        config.shape = .Square
+        config.shape = .square
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -184,14 +184,14 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "default_square")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testRoundImageWithNoInitialsConfigured() {
         let data = TestData(name: "")
         
         var config = TestConfig()
-        config.shape = .Circle
+        config.shape = .circle
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -200,14 +200,14 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "default_circle")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testMaskImageWithNoInitialsConfigured() {
         let data = TestData(name: "")
         
         var config = TestConfig()
-        config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
+        config.shape = .mask(image: UIImage(namedInTest: "hexagon")!)
         
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.configuration = config
@@ -216,7 +216,7 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "default_mask")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
 
     // MARK:- Test To Check Randomly Generated Color Is Constant Depending on name
@@ -233,7 +233,7 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_random_color")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     // MARK:- Custom Font Tests
@@ -242,7 +242,7 @@ class AvatarImageViewTests: XCTestCase {
         let data = TestData(name: "John Appleseed")
         
         var config = TestConfig()
-        config.shape = .Square
+        config.shape = .square
         config.fontName = "Futura-Medium"
         
         let avatarImageView = AvatarImageView(frame: imageRect)
@@ -252,14 +252,14 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "custom_font_square")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testCircleImageWithCustomFont() {
         let data = TestData(name: "John Appleseed")
         
         var config = TestConfig()
-        config.shape = .Circle
+        config.shape = .circle
         config.fontName = "Futura-Medium"
         
         let avatarImageView = AvatarImageView(frame: imageRect)
@@ -269,14 +269,14 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "custom_font_circle")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testMaskImageWithCustomFont() {
         let data = TestData(name: "John Appleseed")
         
         var config = TestConfig()
-        config.shape = .Mask(image: UIImage(namedInTest: "hexagon")!)
+        config.shape = .mask(image: UIImage(namedInTest: "hexagon")!)
         config.fontName = "Futura-Medium"
         
         let avatarImageView = AvatarImageView(frame: imageRect)
@@ -286,14 +286,14 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "custom_font_mask")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
     
     func testImageWithInvalidCustomFont() {
         let data = TestData(name: "John Appleseed")
         
         var config = TestConfig()
-        config.shape = .Square
+        config.shape = .square
         config.fontName = "invalid"
         
         let avatarImageView = AvatarImageView(frame: imageRect)
@@ -303,6 +303,6 @@ class AvatarImageViewTests: XCTestCase {
         let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
         let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "invalid_font_square")!)!
         
-        XCTAssert(imageData.isEqualToData(testImageData), "The image data should match")
+        XCTAssert(imageData == testImageData, "The image data should match")
     }
 }
