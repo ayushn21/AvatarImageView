@@ -117,7 +117,7 @@ it, simply add the following lines to your Podfile:
 ## Release Notes
 
 ####1.2.0
-Migrated code to Swift 2.3
+Migrated code to Swift 2.3.  No further features or patches will be issued for Swift 2.3 after this release.
 
 ####1.1.1
 Modified `init(frame:)` to be public.
