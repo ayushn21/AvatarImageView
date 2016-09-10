@@ -1,7 +1,7 @@
 <p align = "center">
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/SwiftLogger)
-[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2, 2.3-orange.svg)](https://developer.apple.com/swift)
+[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2, 2.3 & 3-orange.svg)](https://developer.apple.com/swift)
 [![Twitter](https://img.shields.io/badge/Twitter-@AyushN21-blue.svg)](https://twitter.com/ayushn21)
 <p>
 
@@ -115,7 +115,13 @@ it, add the following lines to your Podfile:
     # Swift 2.3
     pod "AvatarImageView", '1.2.0'
     
+    # Swift 3.0
+    pod "AvatarImageView", '~> 2.0.0'
+    
 ## Release Notes
+
+####2.0.0
+Migrated code to Swift 3.0.
 
 ####1.2.0
 Migrated code to Swift 2.3.  No further features or patches will be issued for Swift 2.3 after this release.
@@ -128,9 +134,6 @@ Improved the random color generator. It now generates a hash from the initials a
 
 ####1.0.0
 Initial Release
-
-## Swift 3
-Swift 3 support will be added on a feature branch soon, and merged into master when iOS 10 is released.
 
 ## Author
 
