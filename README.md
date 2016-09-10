@@ -2,6 +2,7 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/SwiftLogger)
 [![Swift Version](https://img.shields.io/badge/Language-Swift%202.2, 2.3-orange.svg)](https://developer.apple.com/swift)
+[![Twitter](https://img.shields.io/badge/Twitter-@AyushN21-blue.svg)](https://twitter.com/ayushn21)
 <p>
 
 #### Build Status
@@ -35,7 +36,7 @@ The `AvatarImageViewConfiguration` contains the following members. All have defa
 * `var textSizeFactor: CGFloat { get }` - Default: returns `0.5`
 * `var fontName: String? { get }` - Default: returns `nil` 
 * `var bgColor: UIColor? { get }` - Default: returns in`nil`. The `bgColor` in `AvatarImageViewDataSource` will take precedence over this one.
-* `var textColor: UIColor { get }` - Default: returns `.white()`.
+* `var textColor: UIColor { get }` - Default: returns `.white`.
 
 Check out the [docs](http://cocoadocs.org/docsets/AvatarImageView/) for more information.
 
