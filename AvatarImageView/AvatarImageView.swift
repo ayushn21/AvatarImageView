@@ -80,11 +80,15 @@ public class AvatarImageView: UIImageView {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, scale)
         let context = UIGraphicsGetCurrentContext()
         
+        guard context != nil else {
+            return UIImage()
+        }
+        
         switch configuration.shape {
         case .Circle:
             let circlePath = CGPathCreateWithEllipseInRect(self.bounds, nil)
-            CGContextAddPath(context, circlePath)
-            CGContextClip(context)
+            CGContextAddPath(context!, circlePath)
+            CGContextClip(context!)
             break
         case .Mask(let image):
             mask(layer: layer, withImage: image)
@@ -103,8 +107,8 @@ public class AvatarImageView: UIImageView {
             bgColor = backgroundColorFor(hash: data.avatarId)
         }
         
-        CGContextSetFillColorWithColor(context, bgColor)
-        CGContextFillRect(context, self.bounds)
+        CGContextSetFillColorWithColor(context!, bgColor)
+        CGContextFillRect(context!, self.bounds)
         
         let initials = data.initials as NSString
         let textAttrs = textAttributesFrom(data: data)
@@ -119,7 +123,12 @@ public class AvatarImageView: UIImageView {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        if let image = image {
+            return image
+        }
+        else {
+            return UIImage()
+        }
     }
     
     /// Redraws the image based on the current data source and configuration
