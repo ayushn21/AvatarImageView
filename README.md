@@ -1,14 +1,15 @@
 <p align = "center">
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/SwiftLogger)
-[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2-orange.svg)](https://developer.apple.com/swift)
+[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2, 2.3-orange.svg)](https://developer.apple.com/swift)
 <p>
 
 #### Build Status
-Develop: [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=develop)](https://travis-ci.org/ayushn21/AvatarImageView)
 
-Master: [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=master)](https://travis-ci.org/ayushn21/AvatarImageView)
-
+| Branch  | Build Status |
+| ------------- | ------------- |
+| Develop  | [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=develop)](https://travis-ci.org/ayushn21/AvatarImageView)|
+| Master  | [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=master)](https://travis-ci.org/ayushn21/AvatarImageView)|
 
 ## Description
 
@@ -103,12 +104,20 @@ AvatarImageView requires at least iOS 8.
 ## Installation
 
 AvatarImageView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following lines to your Podfile:
+it, add the following lines to your Podfile:
 
     use_frameworks!
-    pod "AvatarImageView"
+    
+    # Swift 2.2
+    pod "AvatarImageView", '1.1.1'
+    
+    # Swift 2.3
+    pod "AvatarImageView", '1.2.0'
     
 ## Release Notes
+
+####1.2.0
+Migrated code to Swift 2.3.  No further features or patches will be issued for Swift 2.3 after this release.
 
 ####1.1.1
 Modified `init(frame:)` to be public.

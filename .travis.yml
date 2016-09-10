@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode7.3
+osx_image: xcode8
 
 before_script:
   - gem install xcpretty
@@ -9,7 +9,8 @@ env:
   - PROJECT=AvatarImageView
   - SCHEME=$PROJECT
   matrix:
-    - DESTINATION="name=iPhone 6s"
+    - DESTINATION="name=iPhone 7"
+    - DESTINATION="name=iPhone 7 plus"
 
 script: 
   - xcodebuild -project "$PROJECT.xcodeproj" -scheme "$PROJECT" -sdk iphonesimulator -destination "$DESTINATION" test | xcpretty && exit ${PIPESTATUS[0]}
