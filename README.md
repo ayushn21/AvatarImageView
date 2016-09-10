@@ -116,7 +116,7 @@ it, simply add the following lines to your Podfile:
     
 ## Release Notes
 
-####1.2
+####1.2.0
 Migrated code to Swift 2.3
 
 ####1.1.1
