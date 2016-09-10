@@ -1,7 +1,7 @@
 <p align = "center">
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/SwiftLogger)
-[![Swift Version](https://img.shields.io/badge/Language-Swift%202.3-orange.svg)](https://developer.apple.com/swift)
+[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2, 2.3-orange.svg)](https://developer.apple.com/swift)
 <p>
 
 #### Build Status
