@@ -107,9 +107,17 @@ AvatarImageView is available through [CocoaPods](http://cocoapods.org). To insta
 it, simply add the following lines to your Podfile:
 
     use_frameworks!
-    pod "AvatarImageView"
+    
+    # Swift 2.2
+    pod "AvatarImageView", '1.1.1'
+    
+    # Swift 2.3
+    pod "AvatarImageView", '1.2'
     
 ## Release Notes
+
+####1.2
+Migrated code to Swift 2.3
 
 ####1.1.1
 Modified `init(frame:)` to be public.
