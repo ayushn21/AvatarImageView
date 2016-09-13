@@ -116,8 +116,11 @@ it, add the following lines to your Podfile:
     
 ## Release Notes
 
+####1.2.1
+Set deployment target to 8.0. No further features or patches will be issued for Swift 2.3 after this release.
+
 ####1.2.0
-Migrated code to Swift 2.3.  No further features or patches will be issued for Swift 2.3 after this release.
+Migrated code to Swift 2.3. 
 
 ####1.1.1
 Modified `init(frame:)` to be public.
