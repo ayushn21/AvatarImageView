@@ -113,7 +113,7 @@ it, add the following lines to your Podfile:
     pod "AvatarImageView", '1.1.1'
     
     # Swift 2.3
-    pod "AvatarImageView", '1.2.0'
+    pod "AvatarImageView", '~> 1.2.0'
     
     # Swift 3.0
     pod "AvatarImageView", '~> 2.0.0'
@@ -123,8 +123,11 @@ it, add the following lines to your Podfile:
 ####2.0.0
 Migrated code to Swift 3.0.
 
+####1.2.1
+Set deployment target to 8.0. No further features or patches will be issued for Swift 2.3 after this release.
+
 ####1.2.0
-Migrated code to Swift 2.3.  No further features or patches will be issued for Swift 2.3 after this release.
+Migrated code to Swift 2.3. 
 
 ####1.1.1
 Modified `init(frame:)` to be public.
