@@ -107,17 +107,19 @@ AvatarImageView requires at least iOS 8.
 AvatarImageView is available through [CocoaPods](http://cocoapods.org). To install
 it, add the following lines to your Podfile:
 
-    use_frameworks!
-    
-    # Swift 2.2
-    pod "AvatarImageView", '1.1.1'
-    
-    # Swift 2.3
-    pod "AvatarImageView", '~> 1.2.1'
-    
-    # Swift 3.0
-    pod "AvatarImageView", '~> 2.0.0'
-    
+```ruby
+use_frameworks!
+
+# Swift 2.2
+pod "AvatarImageView", '1.1.1'
+
+# Swift 2.3
+pod "AvatarImageView", '~> 1.2.1'
+
+# Swift 3.0
+pod "AvatarImageView", '~> 2.0.0'
+```
+
 ## Release Notes
 
 ####2.0.0
