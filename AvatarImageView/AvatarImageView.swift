@@ -41,7 +41,7 @@ open class AvatarImageView: UIImageView {
     open var configuration: AvatarImageViewConfiguration
         = DefaultConfiguration()
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
