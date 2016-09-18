@@ -122,6 +122,9 @@ pod "AvatarImageView", '~> 2.0.0'
 
 ## Release Notes
 
+####2.0.1
+Modified `init(frame:)` to be public. Seems to have reversed from earlier by a bad merge.
+
 ####2.0.0
 Migrated code to Swift 3.0.
 

@@ -30,16 +30,16 @@ class AvatarTableViewController: UIViewController, UITableViewDelegate, UITableV
         for _ in 0..<50 { data.append(ExampleData()) }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Cells.AvatarCell) as! AvatarTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.AvatarCell) as! AvatarTableViewCell
         cell.avatarImageView.dataSource = data[indexPath.row]
         
         return cell

@@ -14,12 +14,12 @@ public enum Shape {
      This will set the corner radius to half the width if the view is supplied with an image. <br />
      If no image is supplied and the view draws initials, the resulting image will be clipped to a circle using a `CGPath`.
      */
-    case Circle
+    case circle
     /// This will leave the view's corner radius untouched and will not perform any clipping.
-    case Square
+    case square
     
     /// Specify a custom shape using a mask image. Please ensure this image is of equal height and width.
-    case Mask(image: UIImage)
+    case mask(image: UIImage)
 }
 
 /**
@@ -105,11 +105,11 @@ public extension AvatarImageViewDataSource {
                 return ""
             }
             
-            var nameArray = name.componentsSeparatedByString(" ")
+            var nameArray = name.components(separatedBy: " ")
             
             if let firstName = nameArray.first,
                 let lastName = nameArray.last
-                where nameArray.count > 2 {
+                , nameArray.count > 2 {
                 nameArray = [firstName, lastName]
             }
             
@@ -120,7 +120,7 @@ public extension AvatarImageViewDataSource {
                 }
             }
             
-            return initials.uppercaseString
+            return initials.uppercased()
             
         }
     }
@@ -137,7 +137,7 @@ public extension AvatarImageViewConfiguration {
     /// returns `.Square`
     var shape: Shape {
         get {
-            return .Square
+            return .square
         }
     }
     
@@ -165,7 +165,7 @@ public extension AvatarImageViewConfiguration {
     /// returns `UIColor.white()`
     var textColor: UIColor {
         get {
-            return .whiteColor()
+            return .white
         }
     }
 }

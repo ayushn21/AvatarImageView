@@ -26,24 +26,24 @@ class SingleAvatarViewController: UIViewController {
     
     func addViewProgramatically() {
         struct DataSource: AvatarImageViewDataSource {}
-        let avatarImageView = AvatarImageView(frame: CGRectMake(0, 0, 100, 100))
+        let avatarImageView = AvatarImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         avatarImageView.dataSource = DataSource()
         view.addSubview(avatarImageView)
     }
     
     func configureRoundAvatar() {
-        struct Config: AvatarImageViewConfiguration { var shape: Shape = .Circle }
+        struct Config: AvatarImageViewConfiguration { var shape: Shape = .circle }
         avatarImageView.configuration = Config()
     }
     
     func configureHexagonAvatar() {
-        struct Config: AvatarImageViewConfiguration { var shape: Shape = .Mask(image: UIImage(named: "hexagon")!) }
+        struct Config: AvatarImageViewConfiguration { var shape: Shape = .mask(image: UIImage(named: "hexagon")!) }
         avatarImageView.configuration = Config()
     }
     
     func configureRoundAvatarWithCustomFont() {
         struct Config: AvatarImageViewConfiguration {
-            var shape: Shape = .Circle
+            var shape: Shape = .circle
             var fontName: String? = "Futura-Medium"
             
         }

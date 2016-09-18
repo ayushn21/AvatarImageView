@@ -21,12 +21,12 @@ import UIKit
  The background color and image will be set to `clear()` and `nil` at initialisation, so these values should not be set in the storyboard or passed in at initialisation time.
  */
 
-public class AvatarImageView: UIImageView {
+open class AvatarImageView: UIImageView {
     
     static let colorCache = ColorCache<NSString>()
 
     /// The data source to populate the Avatar Image
-    public var dataSource: AvatarImageViewDataSource? {
+    open var dataSource: AvatarImageViewDataSource? {
         didSet {
             refresh()
         }
@@ -38,7 +38,7 @@ public class AvatarImageView: UIImageView {
      
      If you would like to set this value after the data source, you need to call `refresh()` to re-draw the view correctly.
     */
-    public var configuration: AvatarImageViewConfiguration
+    open var configuration: AvatarImageViewConfiguration
         = DefaultConfiguration()
     
     override public init(frame: CGRect) {
@@ -56,11 +56,11 @@ public class AvatarImageView: UIImageView {
     }
     
     func setup() {
-        backgroundColor = .clearColor()
+        backgroundColor = .clear
         image = nil
     }
     
-    func textAttributesFrom(data data: AvatarImageViewDataSource) -> [String : AnyObject] {
+    func textAttributesFrom(data: AvatarImageViewDataSource) -> [String : AnyObject] {
         var attributes: [String : AnyObject] = [NSForegroundColorAttributeName : configuration.textColor]
         let fontSize = bounds.size.width * configuration.textSizeFactor
         
@@ -68,25 +68,29 @@ public class AvatarImageView: UIImageView {
             attributes[NSFontAttributeName] = UIFont(name: fontName, size: fontSize)
         }
         else {
-            attributes[NSFontAttributeName] = UIFont.systemFontOfSize(fontSize)
+            attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: fontSize)
         }
         
         return attributes
     }
     
-    func drawImageWith(data data:AvatarImageViewDataSource) -> UIImage {
-        let scale = UIScreen.mainScreen().scale
+    func drawImageWith(data:AvatarImageViewDataSource) -> UIImage {
+        let scale = UIScreen.main.scale
         
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, scale)
         let context = UIGraphicsGetCurrentContext()
         
+        guard context != nil else {
+            return UIImage()
+        }
+        
         switch configuration.shape {
-        case .Circle:
-            let circlePath = CGPathCreateWithEllipseInRect(self.bounds, nil)
-            CGContextAddPath(context, circlePath)
-            CGContextClip(context)
+        case .circle:
+            let circlePath = CGPath(ellipseIn: self.bounds, transform: nil)
+            context!.addPath(circlePath)
+            context!.clip()
             break
-        case .Mask(let image):
+        case .mask(let image):
             mask(layer: layer, withImage: image)
         default:
             break
@@ -94,32 +98,37 @@ public class AvatarImageView: UIImageView {
         
         var bgColor: CGColor! = nil
         if let color = data.bgColor {
-            bgColor = color.CGColor
+            bgColor = color.cgColor
         }
         else if let color = configuration.bgColor {
-            bgColor = color.CGColor
+            bgColor = color.cgColor
         }
         else {
             bgColor = backgroundColorFor(hash: data.avatarId)
         }
         
-        CGContextSetFillColorWithColor(context, bgColor)
-        CGContextFillRect(context, self.bounds)
+        context!.setFillColor(bgColor)
+        context!.fill(self.bounds)
         
         let initials = data.initials as NSString
         let textAttrs = textAttributesFrom(data: data)
-        let textRectSize = initials.sizeWithAttributes(textAttrs)
-        let textRect = CGRectMake(bounds.size.width / 2 - textRectSize.width / 2,
-                              bounds.size.height / 2 - textRectSize.height / 2,
-                              textRectSize.width,
-                              textRectSize.height)
+        let textRectSize = initials.size(attributes: textAttrs)
+        let textRect = CGRect(x: bounds.size.width / 2 - textRectSize.width / 2,
+                              y: bounds.size.height / 2 - textRectSize.height / 2,
+                              width: textRectSize.width,
+                              height: textRectSize.height)
         
-        initials.drawInRect(textRect, withAttributes: textAttrs)
+        initials.draw(in: textRect, withAttributes: textAttrs)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        if let image = image {
+            return image
+        }
+        else {
+            return UIImage()
+        }
     }
     
     /// Redraws the image based on the current data source and configuration
@@ -132,10 +141,10 @@ public class AvatarImageView: UIImageView {
         if let avatar = dataSource.avatar {
             image = avatar
             switch configuration.shape {
-            case .Circle:
+            case .circle:
                 layer.cornerRadius = bounds.size.width/2
                 break
-            case .Mask(let image):
+            case .mask(let image):
                 mask(layer: layer, withImage: image)
             default:
                 break
@@ -150,15 +159,15 @@ public class AvatarImageView: UIImageView {
 
     // MARK:- Utilities
     
-    private func backgroundColorFor(hash hash: Int) -> CGColor {
+    private func backgroundColorFor(hash: Int) -> CGColor {
         if let colorString = AvatarImageView.colorCache[hash] {
-            let colors = colorString.componentsSeparatedByString("^")
+            let colors = colorString.components(separatedBy: "^")
             
             let red = CGFloat((colors[0] as NSString).doubleValue)
             let green = CGFloat((colors[1] as NSString).doubleValue)
             let blue = CGFloat((colors[2] as NSString).doubleValue)
             
-            return UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
+            return UIColor(red: red, green: green, blue: blue, alpha: 1.0).cgColor
         }
         else {
             srand48(hash)
@@ -167,17 +176,17 @@ public class AvatarImageView: UIImageView {
             let green = CGFloat(drand48())
             let blue = CGFloat(drand48())
             
-            let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0).CGColor
+            let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0).cgColor
             let stringRepresentation = "\(red)^\(green)^\(blue)"
             
-            AvatarImageView.colorCache[hash] = stringRepresentation
+            AvatarImageView.colorCache[hash] = stringRepresentation as NSString?
             return color
         }
     }
     
-    private func mask(layer layer: CALayer, withImage image: UIImage) {
+    private func mask(layer: CALayer, withImage image: UIImage) {
         let mask = CALayer()
-        mask.contents = image.CGImage
+        mask.contents = image.cgImage
         mask.frame = bounds
         layer.mask = mask
         layer.masksToBounds = true
