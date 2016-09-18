@@ -11,8 +11,8 @@ import UIKit
 extension UIImage {
     convenience init?(namedInTest name: String) {
         self.init(named: name,
-                  inBundle: NSBundle(forClass: UIImageTestUtils.self),
-                  compatibleWithTraitCollection: nil)
+                  in: Bundle(for: UIImageTestUtils.self),
+                  compatibleWith: nil)
     }
 }
 
