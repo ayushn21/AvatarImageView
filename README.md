@@ -113,7 +113,7 @@ it, add the following lines to your Podfile:
     pod "AvatarImageView", '1.1.1'
     
     # Swift 2.3
-    pod "AvatarImageView", '~> 1.2.0'
+    pod "AvatarImageView", '~> 1.2.1'
     
     # Swift 3.0
     pod "AvatarImageView", '~> 2.0.0'
