@@ -20,7 +20,7 @@ struct TestData: AvatarImageViewDataSource {
 }
 
 struct TestConfig: AvatarImageViewConfiguration {
-    var shape: Shape = .Square
-    var bgColor: UIColor? = UIColor.greenColor()
+    var shape: Shape = .square
+    var bgColor: UIColor? = UIColor.green
     var fontName: String?
 }
