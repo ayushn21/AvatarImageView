@@ -10,7 +10,7 @@ import UIKit
 import AvatarImageView
 
 struct TableAvatarImageConfig: AvatarImageViewConfiguration {
-    let shape: Shape = .Circle
+    let shape: Shape = .circle
 }
 
 class AvatarTableViewCell: UITableViewCell {

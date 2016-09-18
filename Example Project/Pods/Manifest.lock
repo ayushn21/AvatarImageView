@@ -1,12 +1,12 @@
 PODS:
-  - AvatarImageView (1.1.0)
+  - AvatarImageView (2.0.1)
 
 DEPENDENCIES:
   - AvatarImageView
 
 SPEC CHECKSUMS:
-  AvatarImageView: 54038ab50a9645125cdec2b7c25816208a47fcfa
+  AvatarImageView: 88a68036709840c82513da56ea40ee5fe5e5224a
 
 PODFILE CHECKSUM: db1fed1736b34674e9cb61cc5c7a55d7de9b8ef9
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2

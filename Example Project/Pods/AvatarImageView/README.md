@@ -1,14 +1,16 @@
 <p align = "center">
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/SwiftLogger)
-[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2-orange.svg)](https://developer.apple.com/swift)
+[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2, 2.3 & 3-orange.svg)](https://developer.apple.com/swift)
+[![Twitter](https://img.shields.io/badge/Twitter-@AyushN21-blue.svg)](https://twitter.com/ayushn21)
 <p>
 
 #### Build Status
-Develop: [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=develop)](https://travis-ci.org/ayushn21/AvatarImageView)
 
-Master: [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=master)](https://travis-ci.org/ayushn21/AvatarImageView)
-
+| Branch  | Build Status |
+| ------------- | ------------- |
+| Develop  | [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=develop)](https://travis-ci.org/ayushn21/AvatarImageView)|
+| Master  | [![Build Status](https://travis-ci.org/ayushn21/AvatarImageView.svg?branch=master)](https://travis-ci.org/ayushn21/AvatarImageView)|
 
 ## Description
 
@@ -34,7 +36,7 @@ The `AvatarImageViewConfiguration` contains the following members. All have defa
 * `var textSizeFactor: CGFloat { get }` - Default: returns `0.5`
 * `var fontName: String? { get }` - Default: returns `nil` 
 * `var bgColor: UIColor? { get }` - Default: returns in`nil`. The `bgColor` in `AvatarImageViewDataSource` will take precedence over this one.
-* `var textColor: UIColor { get }` - Default: returns `.white()`.
+* `var textColor: UIColor { get }` - Default: returns `.white`.
 
 Check out the [docs](http://cocoadocs.org/docsets/AvatarImageView/) for more information.
 
@@ -103,21 +105,43 @@ AvatarImageView requires at least iOS 8.
 ## Installation
 
 AvatarImageView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following lines to your Podfile:
+it, add the following lines to your Podfile:
 
-    use_frameworks!
-    pod "AvatarImageView"
-    
+```ruby
+use_frameworks!
+
+# Swift 2.2
+pod "AvatarImageView", '1.1.1'
+
+# Swift 2.3
+pod "AvatarImageView", '~> 1.2.1'
+
+# Swift 3.0
+pod "AvatarImageView", '~> 2.0.0'
+```
+
 ## Release Notes
+
+####2.0.1
+Modified `init(frame:)` to be public. Seems to have reversed from earlier by a bad merge.
+
+####2.0.0
+Migrated code to Swift 3.0.
+
+####1.2.1
+Set deployment target to 8.0. No further features or patches will be issued for Swift 2.3 after this release.
+
+####1.2.0
+Migrated code to Swift 2.3. 
+
+####1.1.1
+Modified `init(frame:)` to be public.
 
 ####1.1.0
 Improved the random color generator. It now generates a hash from the initials and name, and then uses that as the seed to generate the random color, so it's always the same for each unique user.
 
 ####1.0.0
 Initial Release
-
-## Swift 3
-Swift 3 support will be added on a feature branch soon, and merged into master when iOS 10 is released.
 
 ## Author
 
