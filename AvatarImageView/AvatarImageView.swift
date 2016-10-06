@@ -142,6 +142,8 @@ open class AvatarImageView: UIImageView {
             image = avatar
             switch configuration.shape {
             case .circle:
+                layoutIfNeeded()
+                clipsToBounds = true
                 layer.cornerRadius = bounds.size.width/2
                 break
             case .mask(let image):
