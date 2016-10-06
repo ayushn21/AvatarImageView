@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ee-HK-d0P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7ee-HK-d0P">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Single Avatar-->
@@ -17,18 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ARg-Tg-Da4" customClass="AvatarImageView" customModule="AvatarImageView">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ARg-Tg-Da4" customClass="AvatarImageView" customModule="AvatarImageView">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="P0e-1G-odH"/>
-                                    <constraint firstAttribute="width" constant="200" id="sAO-0B-35Q"/>
+                                    <constraint firstAttribute="height" constant="200" id="aOk-jU-b78"/>
+                                    <constraint firstAttribute="width" constant="200" id="bxG-zW-PEm"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ARg-Tg-Da4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ASn-Li-6Yr"/>
-                            <constraint firstItem="ARg-Tg-Da4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hf0-q0-fSx"/>
+                            <constraint firstItem="ARg-Tg-Da4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q2u-2u-tJb"/>
+                            <constraint firstItem="ARg-Tg-Da4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zba-Sa-5Mz"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Single Avatar" id="JdY-e2-ZXH"/>
@@ -53,29 +52,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWn-Nk-6Eg">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="avatarCell" rowHeight="120" id="gYN-1N-SyK" customClass="AvatarTableViewCell" customModule="AvatarImageViewExample" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gYN-1N-SyK" id="5ZA-ht-yMe">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
+                                            <frame key="frameInset" width="600" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="12o-Ze-qdZ" customClass="AvatarImageView" customModule="AvatarImageView">
-                                                    <rect key="frame" x="8" y="20" width="80" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="gb5-ke-GBl"/>
-                                                        <constraint firstAttribute="width" constant="80" id="iXi-jh-I9Q"/>
+                                                        <constraint firstAttribute="height" constant="104" id="l4L-cQ-t0a"/>
+                                                        <constraint firstAttribute="width" constant="104" id="ncx-UB-nNS"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="12o-Ze-qdZ" firstAttribute="centerY" secondItem="5ZA-ht-yMe" secondAttribute="centerY" id="FVd-dB-U5L"/>
-                                                <constraint firstItem="12o-Ze-qdZ" firstAttribute="top" secondItem="5ZA-ht-yMe" secondAttribute="top" constant="20" id="Jhv-eq-xxf"/>
-                                                <constraint firstAttribute="bottom" secondItem="12o-Ze-qdZ" secondAttribute="bottom" constant="19" id="JwN-Bx-ALZ"/>
-                                                <constraint firstItem="12o-Ze-qdZ" firstAttribute="leading" secondItem="5ZA-ht-yMe" secondAttribute="leading" constant="8" id="eZ4-qg-6ae"/>
+                                                <constraint firstAttribute="bottom" secondItem="12o-Ze-qdZ" secondAttribute="bottom" constant="8" id="Lw9-id-bn8"/>
+                                                <constraint firstItem="12o-Ze-qdZ" firstAttribute="centerY" secondItem="5ZA-ht-yMe" secondAttribute="centerY" id="chE-NQ-UBE"/>
+                                                <constraint firstItem="12o-Ze-qdZ" firstAttribute="leading" secondItem="5ZA-ht-yMe" secondAttribute="leading" constant="8" id="sZg-aX-lQg"/>
+                                                <constraint firstItem="12o-Ze-qdZ" firstAttribute="top" secondItem="5ZA-ht-yMe" secondAttribute="top" constant="8" id="zwy-KX-VRu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -89,7 +86,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UWn-Nk-6Eg" firstAttribute="leading" secondItem="MdG-YW-IBt" secondAttribute="leading" id="0hc-EA-zwL"/>
                             <constraint firstItem="UWn-Nk-6Eg" firstAttribute="top" secondItem="MdG-YW-IBt" secondAttribute="top" id="An0-aZ-gTb"/>
@@ -104,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FG-bc-YRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="782"/>
+            <point key="canvasLocation" x="1392.8" y="781.25937031484261"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3xF-ih-Q6j">
@@ -112,8 +109,9 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7ee-HK-d0P" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xaF-qM-iuC">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="fdT-V3-bSy"/>
