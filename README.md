@@ -122,6 +122,9 @@ pod "AvatarImageView", '~> 2.0.0'
 
 ## Release Notes
 
+####2.0.2
+Fixing an issue where a profile picture may not always appear in a circle even if specified in the configuration.
+
 ####2.0.1
 Modified `init(frame:)` to be public. Seems to have reversed from earlier by a bad merge.
 
