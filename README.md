@@ -122,6 +122,9 @@ pod "AvatarImageView", '~> 2.0.0'
 
 ## Release Notes
 
+####2.0.3
+Added a baseline offset config attribute which may be needed for custom fonts
+
 ####2.0.2
 Fixing an issue where a profile picture may not always appear in a circle even if specified in the configuration.
 
