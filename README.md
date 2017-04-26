@@ -1,6 +1,6 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
-[![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/SwiftLogger)
-[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2, 2.3 & 3-orange.svg)](https://developer.apple.com/swift)
+[![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/AvatarImageView)
+[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2,%202.3%20&%203-orange.svg)](https://developer.apple.com/swift)
 [![Twitter](https://img.shields.io/badge/Twitter-@AyushN21-blue.svg)](https://twitter.com/ayushn21)
 
 #### Build Status
@@ -46,13 +46,10 @@ The image view can be drawn as a square or circle out of the box. You can even s
 ![Circle Initials](./Screenshots/circle_initials.png)
 ![Mask Initials](./Screenshots/mask_initials.png)
 
-<br /><br />
 Here's an example of when the `dataSource` supplies a profile picture and the `configuration` is set to a circle.
-
 
 ![Circle Profile Pic](./Screenshots/circle_profile_pic.png)
 
-<br /><br />
 It works great with custom fonts!
 
 
@@ -63,11 +60,11 @@ It works great with custom fonts!
 
 ![Table View Pics](./Screenshots/table_view.png)
 
-####Example Project
+#### Example Project
 
 Please refer to the example project in this repository for an implementation of all the above use cases. If you find any bugs, open a GitHub issue!
 
-####Gotchas
+#### Gotchas
 
 1. Always set the `configuration` before the `dataSource`. If you don't, you will need to manually call `refresh()` to render the view correctly.
 
@@ -119,31 +116,31 @@ pod "AvatarImageView", '~> 2.0.0'
 
 ## Release Notes
 
-####2.0.3
+#### 2.0.3
 Added a baseline offset config attribute which may be needed for custom fonts
 
-####2.0.2
+#### 2.0.2
 Fixing an issue where a profile picture may not always appear in a circle even if specified in the configuration.
 
-####2.0.1
+#### 2.0.1
 Modified `init(frame:)` to be public. Seems to have reversed from earlier by a bad merge.
 
-####2.0.0
+#### 2.0.0
 Migrated code to Swift 3.0.
 
-####1.2.1
+#### 1.2.1
 Set deployment target to 8.0. No further features or patches will be issued for Swift 2.3 after this release.
 
-####1.2.0
+#### 1.2.0
 Migrated code to Swift 2.3. 
 
-####1.1.1
+#### 1.1.1
 Modified `init(frame:)` to be public.
 
-####1.1.0
+#### 1.1.0
 Improved the random color generator. It now generates a hash from the initials and name, and then uses that as the seed to generate the random color, so it's always the same for each unique user.
 
-####1.0.0
+#### 1.0.0
 Initial Release
 
 ## Author
