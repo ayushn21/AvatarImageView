@@ -59,6 +59,10 @@ public protocol AvatarImageViewConfiguration {
     /// The height of the view is multiplied by this factor to get the size the text will be drawn at.
     var textSizeFactor: CGFloat { get }
     
+    
+     /// The font size is multiplied by this factor to set NSBaselineOffsetAttributeName of the font
+    var baselineOffsetFactor: CGFloat { get }
+    
     /// The name of the font to be used to draw text. If this is nil, the system font will be used.
     var fontName: String? { get }
     
@@ -145,6 +149,13 @@ public extension AvatarImageViewConfiguration {
     var textSizeFactor: CGFloat {
         get {
             return 0.5
+        }
+    }
+    
+    /// returns `0.0`
+    var baselineOffsetFactor: CGFloat {
+        get {
+            return 0.0
         }
     }
     

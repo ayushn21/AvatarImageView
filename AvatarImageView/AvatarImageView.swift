@@ -71,6 +71,9 @@ open class AvatarImageView: UIImageView {
             attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: fontSize)
         }
         
+        let baselineOffset = fontSize * configuration.baselineOffsetFactor
+        attributes[NSBaselineOffsetAttributeName] = NSNumber(value: Double(baselineOffset))
+        
         return attributes
     }
     
