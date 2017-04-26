@@ -3,7 +3,7 @@
 [![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/SwiftLogger)
 [![Swift Version](https://img.shields.io/badge/Language-Swift%202.2, 2.3 & 3-orange.svg)](https://developer.apple.com/swift)
 [![Twitter](https://img.shields.io/badge/Twitter-@AyushN21-blue.svg)](https://twitter.com/ayushn21)
-<p>
+</p>
 
 #### Build Status
 
@@ -48,24 +48,24 @@ The image view can be drawn as a square or circle out of the box. You can even s
 ![Square Initials](./Screenshots/square_initials.png)
 ![Circle Initials](./Screenshots/circle_initials.png)
 ![Mask Initials](./Screenshots/mask_initials.png)
-<p>
+</p>
 <br /><br />
 Here's an example of when the `dataSource` supplies a profile picture and the `configuration` is set to a circle.
 
 <p align = "center">
 ![Circle Profile Pic](./Screenshots/circle_profile_pic.png)
-<p>
+</p>
 <br /><br />
 It works great with custom fonts!
 
 <p align = "center">
 ![Custom Font](./Screenshots/circle_custom_font.png)
-<p>
+</p>
 ...and also with `UITableView`s
 
 <p align = "center">
 ![Table View Pics](./Screenshots/table_view.png)
-<p>
+</p>
 ####Example Project
 
 Please refer to the example project in this repository for an implementation of all the above use cases. If you find any bugs, open a GitHub issue!
