@@ -60,19 +60,19 @@ open class AvatarImageView: UIImageView {
         image = nil
     }
     
-    func textAttributesFrom(data: AvatarImageViewDataSource) -> [String : AnyObject] {
-        var attributes: [String : AnyObject] = [NSForegroundColorAttributeName : configuration.textColor]
+    func textAttributesFrom(data: AvatarImageViewDataSource) -> [NSAttributedStringKey : Any] {
+        var attributes: [NSAttributedStringKey : Any] = [NSAttributedStringKey.foregroundColor : configuration.textColor]
         let fontSize = bounds.size.width * configuration.textSizeFactor
         
         if let fontName = configuration.fontName {
-            attributes[NSFontAttributeName] = UIFont(name: fontName, size: fontSize)
+            attributes[NSAttributedStringKey.font] = UIFont(name: fontName, size: fontSize)
         }
         else {
-            attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: fontSize)
+            attributes[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: fontSize)
         }
         
         let baselineOffset = fontSize * configuration.baselineOffsetFactor
-        attributes[NSBaselineOffsetAttributeName] = NSNumber(value: Double(baselineOffset))
+        attributes[NSAttributedStringKey.baselineOffset] = NSNumber(value: Double(baselineOffset))
         
         return attributes
     }
@@ -115,7 +115,7 @@ open class AvatarImageView: UIImageView {
         
         let initials = data.initials as NSString
         let textAttrs = textAttributesFrom(data: data)
-        let textRectSize = initials.size(attributes: textAttrs)
+        let textRectSize = initials.size(withAttributes: textAttrs)
         let textRect = CGRect(x: bounds.size.width / 2 - textRectSize.width / 2,
                               y: bounds.size.height / 2 - textRectSize.height / 2,
                               width: textRectSize.width,
