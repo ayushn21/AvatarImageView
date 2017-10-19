@@ -1,6 +1,6 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/AvatarImageView)
-[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2,%202.3%20&%203-orange.svg)](https://developer.apple.com/swift)
+[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2,%202.3,%203%20&%204-orange.svg)](https://developer.apple.com/swift)
 [![Twitter](https://img.shields.io/badge/Twitter-@AyushN21-blue.svg)](https://twitter.com/ayushn21)
 
 #### Build Status
@@ -111,10 +111,16 @@ pod "AvatarImageView", '1.1.1'
 pod "AvatarImageView", '~> 1.2.1'
 
 # Swift 3.0
-pod "AvatarImageView", '~> 2.0.0'
+pod "AvatarImageView", '2.0.0'
+
+# Swift 4.0
+pod "AvatarImageView", '~> 2.1.0'
 ```
 
 ## Release Notes
+
+#### 2.1.0
+Migrated to Swift 4
 
 #### 2.0.3
 Added a baseline offset config attribute which may be needed for custom fonts
