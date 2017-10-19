@@ -119,6 +119,9 @@ pod "AvatarImageView", '~> 2.1.0'
 
 ## Release Notes
 
+#### 2.1.1
+Fixed irrational test suite and test warnings
+
 #### 2.1.0
 Migrated to Swift 4
 
