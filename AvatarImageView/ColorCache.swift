@@ -13,13 +13,12 @@ final class ColorCache<ValueType: AnyObject> {
     private let cache = NSCache<NSNumber, ValueType>()
     
     lazy var notificationCenter = NotificationCenter.default
-    lazy var application = UIApplication.shared
     
     init() {
         notificationCenter.addObserver(self,
                                        selector: #selector(clear),
                                        name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning,
-                                       object: application)
+                                       object: nil)
     }
     
     deinit {
