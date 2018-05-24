@@ -105,7 +105,7 @@ public extension AvatarImageViewDataSource {
      */
     var initials: String {
         get {
-            guard name.characters.count > 0 else {
+            guard name.count > 0 else {
                 return ""
             }
             
@@ -119,7 +119,7 @@ public extension AvatarImageViewDataSource {
             
             var initials = ""
             nameArray.forEach { element in
-                if let firstLetter = element.characters.first {
+                if let firstLetter = element.first {
                     initials.append(firstLetter)
                 }
             }
