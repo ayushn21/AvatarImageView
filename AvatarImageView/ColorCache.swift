@@ -17,7 +17,7 @@ final class ColorCache<ValueType: AnyObject> {
     init() {
         notificationCenter.addObserver(self,
                                        selector: #selector(clear),
-                                       name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning,
+                                       name: UIApplication.didReceiveMemoryWarningNotification,
                                        object: nil)
     }
     

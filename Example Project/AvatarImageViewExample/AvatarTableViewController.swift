@@ -15,12 +15,7 @@ class AvatarTableViewController: UIViewController, UITableViewDelegate, UITableV
         static let AvatarCell = "avatarCell"
     }
     
-    @IBOutlet var tableView: UITableView! {
-        didSet {
-            tableView.rowHeight = UITableViewAutomaticDimension
-            tableView.estimatedRowHeight = 120
-        }
-    }
+    @IBOutlet var tableView: UITableView!
     
     var data: [ExampleData] = []
     
