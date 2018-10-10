@@ -4,9 +4,13 @@ PODS:
 DEPENDENCIES:
   - AvatarImageView
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AvatarImageView
+
 SPEC CHECKSUMS:
   AvatarImageView: 88a68036709840c82513da56ea40ee5fe5e5224a
 
 PODFILE CHECKSUM: db1fed1736b34674e9cb61cc5c7a55d7de9b8ef9
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.5.3
