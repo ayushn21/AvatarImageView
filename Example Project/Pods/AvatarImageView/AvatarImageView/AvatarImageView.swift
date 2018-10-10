@@ -61,14 +61,14 @@ open class AvatarImageView: UIImageView {
     }
     
     func textAttributesFrom(data: AvatarImageViewDataSource) -> [String : AnyObject] {
-        var attributes: [String : AnyObject] = [NSForegroundColorAttributeName : configuration.textColor]
+        var attributes: [String : AnyObject] = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor) : configuration.textColor]
         let fontSize = bounds.size.width * configuration.textSizeFactor
         
         if let fontName = configuration.fontName {
-            attributes[NSFontAttributeName] = UIFont(name: fontName, size: fontSize)
+            attributes[convertFromNSAttributedStringKey(NSAttributedString.Key.font)] = UIFont(name: fontName, size: fontSize)
         }
         else {
-            attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: fontSize)
+            attributes[convertFromNSAttributedStringKey(NSAttributedString.Key.font)] = UIFont.systemFont(ofSize: fontSize)
         }
         
         return attributes
@@ -112,13 +112,13 @@ open class AvatarImageView: UIImageView {
         
         let initials = data.initials as NSString
         let textAttrs = textAttributesFrom(data: data)
-        let textRectSize = initials.size(attributes: textAttrs)
+        let textRectSize = initials.size(withAttributes: convertToOptionalNSAttributedStringKeyDictionary(textAttrs))
         let textRect = CGRect(x: bounds.size.width / 2 - textRectSize.width / 2,
                               y: bounds.size.height / 2 - textRectSize.height / 2,
                               width: textRectSize.width,
                               height: textRectSize.height)
         
-        initials.draw(in: textRect, withAttributes: textAttrs)
+        initials.draw(in: textRect, withAttributes: convertToOptionalNSAttributedStringKeyDictionary(textAttrs))
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -193,4 +193,15 @@ open class AvatarImageView: UIImageView {
         layer.mask = mask
         layer.masksToBounds = true
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }

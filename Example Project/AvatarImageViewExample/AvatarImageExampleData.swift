@@ -19,7 +19,7 @@ struct ExampleData: AvatarImageViewDataSource {
     
     static func randomName() -> String {
         let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        let charSetArray = charSet.characters.map { String($0) }
+        let charSetArray = charSet.map { String($0) }
         
         var string = ""
         

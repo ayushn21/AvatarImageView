@@ -17,7 +17,7 @@ class AvatarTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet var tableView: UITableView! {
         didSet {
-            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.rowHeight = UITableView.automaticDimension
             tableView.estimatedRowHeight = 120
         }
     }
