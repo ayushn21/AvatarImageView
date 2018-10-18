@@ -1,5 +1,5 @@
 PODS:
-  - AvatarImageView (2.1.2)
+  - AvatarImageView (2.2)
 
 DEPENDENCIES:
   - AvatarImageView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AvatarImageView: f05cba2e5ebfe9f6e35a0b20af7075d620808943
+  AvatarImageView: d2f2adcb35bd91cf53ae363a1e91d92949343b42
 
 PODFILE CHECKSUM: 1080b105a59d255e7bbd406489c3500a2bdf296a
 

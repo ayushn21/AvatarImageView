@@ -1,6 +1,6 @@
 {
   "name": "AvatarImageView",
-  "version": "2.1.2",
+  "version": "2.2",
   "summary": "AvatarImageView is a simple and extensible UIImageView subclass to display users' avatars",
   "authors": {
     "Ayush Newatia": "ayush.newatia@icloud.com"
@@ -11,7 +11,7 @@
   "homepage": "https://github.com/ayushn21/AvatarImageView",
   "source": {
     "git": "https://github.com/ayushn21/AvatarImageView.git",
-    "tag": "2.1.2"
+    "tag": "2.2"
   },
   "social_media_url": "https://twitter.com/ayushn21",
   "license": "MIT",
