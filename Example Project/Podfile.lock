@@ -1,12 +1,16 @@
 PODS:
-  - AvatarImageView (2.0.1)
+  - AvatarImageView (2.2)
 
 DEPENDENCIES:
-  - AvatarImageView
+  - AvatarImageView (from `../`)
+
+EXTERNAL SOURCES:
+  AvatarImageView:
+    :path: "../"
 
 SPEC CHECKSUMS:
-  AvatarImageView: 88a68036709840c82513da56ea40ee5fe5e5224a
+  AvatarImageView: d2f2adcb35bd91cf53ae363a1e91d92949343b42
 
-PODFILE CHECKSUM: db1fed1736b34674e9cb61cc5c7a55d7de9b8ef9
+PODFILE CHECKSUM: 1080b105a59d255e7bbd406489c3500a2bdf296a
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.5.3

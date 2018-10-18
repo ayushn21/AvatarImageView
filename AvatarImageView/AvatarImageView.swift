@@ -60,19 +60,19 @@ open class AvatarImageView: UIImageView {
         image = nil
     }
     
-    func textAttributesFrom(data: AvatarImageViewDataSource) -> [NSAttributedStringKey : Any] {
-        var attributes: [NSAttributedStringKey : Any] = [NSAttributedStringKey.foregroundColor : configuration.textColor]
+    func textAttributesFrom(data: AvatarImageViewDataSource) -> [NSAttributedString.Key: Any] {
+        var attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: configuration.textColor]
         let fontSize = bounds.size.width * configuration.textSizeFactor
         
         if let fontName = configuration.fontName {
-            attributes[NSAttributedStringKey.font] = UIFont(name: fontName, size: fontSize)
+            attributes[NSAttributedString.Key.font] = UIFont(name: fontName, size: fontSize)
         }
         else {
-            attributes[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: fontSize)
+            attributes[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: fontSize)
         }
         
         let baselineOffset = fontSize * configuration.baselineOffsetFactor
-        attributes[NSAttributedStringKey.baselineOffset] = NSNumber(value: Double(baselineOffset))
+        attributes[NSAttributedString.Key.baselineOffset] = NSNumber(value: Double(baselineOffset))
         
         return attributes
     }
