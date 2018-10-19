@@ -1,6 +1,6 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Pod Version](https://cocoapod-badges.herokuapp.com/v/AvatarImageView/badge.png)](https://cocoapods.org/pods/AvatarImageView)
-[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2,%202.3,%203%20&%204-orange.svg)](https://developer.apple.com/swift)
+[![Swift Version](https://img.shields.io/badge/Language-Swift%202.2,%202.3,%203,%204%20&%204.2-orange.svg)](https://developer.apple.com/swift)
 [![Twitter](https://img.shields.io/badge/Twitter-@AyushN21-blue.svg)](https://twitter.com/ayushn21)
 
 #### Build Status
@@ -16,7 +16,7 @@
 
 This library was inspired by and is supposed to be a Swift rewrite of [bachonk/UIImageView-Letters](https://github.com/bachonk/UIImageView-Letters). 
 
-##Usage
+## Usage
 
 To set up `AvatarImageView`, a `dataSource` that conforms to `AvatarImageViewDataSource` needs to be set. Optionally a `configuration` that conforms to `AvatarImageViewConfiguration` can also be set. The default configuration will show a square picture; and if no profile picture is supplied, it will draw the initials with the system font on a random background color.
 
@@ -115,9 +115,15 @@ pod "AvatarImageView", '2.0.0'
 
 # Swift 4.0
 pod "AvatarImageView", '~> 2.1.0'
+
+# Swift 4.2
+pod "AvatarImageView", '~> 2.2.0'
 ```
 
 ## Release Notes
+
+#### 2.2.0
+Added Swift 4.2 support
 
 #### 2.1.1
 Fixed irrational test suite and test warnings
