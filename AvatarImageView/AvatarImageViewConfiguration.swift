@@ -132,7 +132,7 @@ public extension AvatarImageViewDataSource {
     ///  returns the hash values of the name and initials combined with an XOR operator. This should ideally be improved by adding something more unique like an email address to the hash.
     var avatarId: Int {
         get {
-            return name.hashValue ^ initials.hashValue
+            return name.hash ^ initials.hash
         }
     }
 }
