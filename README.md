@@ -3,6 +3,12 @@
 [![Swift Version](https://img.shields.io/badge/Language-Swift%202.2,%202.3,%203,%204%20&%204.2-orange.svg)](https://developer.apple.com/swift)
 [![Twitter](https://img.shields.io/badge/Twitter-@AyushN21-blue.svg)](https://twitter.com/ayushn21)
 
+🚨🚨 THIS LIBRARY IS NO LONGER BEING MAINTAINED 🚨🚨
+
+I have run out of patience with Swift to stabilise and I can't be bothered to keep updating this every year becuase the language keeps breaking. Also I've decided to stop updating my laptop's OS (currently on Sierra) becuase I fear Apple will brick it and I'll be force to get one of those awful touchbar Macs; so that means I can't download the latest Xcode anyway.
+
+If you have a fork that you are happy to keep up to date, please email me and I will add a link to your repo in this Readme. Or feel free to open a PR adding the link.
+
 #### Build Status
 
 | Branch  | Build Status |

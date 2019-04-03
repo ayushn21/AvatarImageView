@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.license           = 'MIT'
   s.requires_arc      = true
   s.source_files      = 'AvatarImageView/*.swift'
+  s.deprecated        = true
 end
