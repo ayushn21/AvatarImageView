@@ -5,9 +5,10 @@
 
 🚨🚨 THIS LIBRARY IS NO LONGER BEING MAINTAINED 🚨🚨
 
-I have run out of patience with Swift to stabilise and I can't be bothered to keep updating this every year becuase the language keeps breaking. Also I've decided to stop updating my laptop's OS (currently on Sierra) becuase I fear Apple will brick it and I'll be force to get one of those awful touchbar Macs; so that means I can't download the latest Xcode anyway.
+I've made a career move away from iOS and decided to stop maintaining this library due to Swift's continued instability.
 
-If you have a fork that you are happy to keep up to date, please email me and I will add a link to your repo in this Readme. Or feel free to open a PR adding the link.
+The amazing folks at [Neone](https://neone.com) have forked the project and continued to develop it. Please use their fork located here:
+[https://github.com/neone/NDAvatarApp](https://github.com/neone/NDAvatarApp).
 
 #### Build Status
 
