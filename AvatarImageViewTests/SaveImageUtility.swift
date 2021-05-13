@@ -21,7 +21,7 @@ extension UIView {
 
 extension UIImage {
     func saveToDesktop(withName name: String = "image.png") {
-        let imageData = UIImagePNGRepresentation(self)
+        let imageData = self.pngData()
         let simluatorDesktopPath = NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true).first!
         let splitPath = simluatorDesktopPath.components(separatedBy: "/")
         let path = "/\(splitPath[1])/\(splitPath[2])/Desktop/\(name)"

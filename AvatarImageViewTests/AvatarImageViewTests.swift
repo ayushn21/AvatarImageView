@@ -25,8 +25,8 @@ class AvatarImageViewTests: XCTestCase {
         let avatarImageView = AvatarImageView(frame: imageRect)
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "profile_pic")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "profile_pic")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -42,8 +42,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "profile_pic")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "profile_pic")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
         XCTAssert(avatarImageView.layer.cornerRadius == avatarImageView.bounds.width/2 ,"The corner radius should be half the width")
@@ -82,8 +82,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_square_blue")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "initials_square_blue")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -99,8 +99,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_circle_blue")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "initials_circle_blue")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -116,8 +116,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_mask_blue")!)!
+        let imageData = avatarImageView.asImage().pngData()!
+        let testImageData = UIImage(namedInTest: "initials_mask_blue")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -134,8 +134,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_square")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "initials_square")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -150,8 +150,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_circle")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "initials_circle")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -166,8 +166,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_mask")!)!
+        let imageData = avatarImageView.asImage().pngData()!
+        let testImageData = UIImage(namedInTest: "initials_mask")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -184,8 +184,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "default_square")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "default_square")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -200,8 +200,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "default_circle")!)!
+        let imageData = avatarImageView.asImage().pngData()!
+        let testImageData = UIImage(namedInTest: "default_circle")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -216,8 +216,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "default_mask")!)!
+        let imageData = avatarImageView.asImage().pngData()!
+        let testImageData = UIImage(namedInTest: "default_mask")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -233,8 +233,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = configOne
         avatarImageView.dataSource = dataOne
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "initials_random_color")!)!
+        let imageData = avatarImageView.asImage().pngData()!
+        let testImageData = UIImage(namedInTest: "initials_random_color")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -252,8 +252,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "custom_font_square")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "custom_font_square")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -269,8 +269,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "custom_font_circle")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "custom_font_circle")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -286,8 +286,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.asImage())!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "custom_font_mask")!)!
+        let imageData = avatarImageView.asImage().pngData()!
+        let testImageData = UIImage(namedInTest: "custom_font_mask")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
@@ -303,8 +303,8 @@ class AvatarImageViewTests: XCTestCase {
         avatarImageView.configuration = config
         avatarImageView.dataSource = data
         
-        let imageData = UIImagePNGRepresentation(avatarImageView.image!)!
-        let testImageData = UIImagePNGRepresentation(UIImage(namedInTest: "invalid_font_square")!)!
+        let imageData = avatarImageView.image!.pngData()!
+        let testImageData = UIImage(namedInTest: "invalid_font_square")!.pngData()!
         
         XCTAssert(imageData == testImageData, "The image data should match")
     }
